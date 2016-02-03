@@ -1,0 +1,115 @@
+/*YahooAutocomplete Style @1-BD04952E*/
+.sex_department_patient_re1s_surnameYahooAutocomplete1 .yui-ac-container {
+    left: 0;
+}
+.sex_department_patient_re1s_surnameYahooAutocomplete1 input {
+    position: relative;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    *width: expression(parseInt(this.parentNode.currentStyle.width)-6+'px');
+}
+.sex_department_patient_re1s_surname_container {
+    display: block;
+}
+.YUIAutcompleteHighlight {
+    background-color: #AAAAAA;
+}
+.YUIAutcompletePreHighlight {
+    background-color: #DDDDDD;
+}
+/*End YahooAutocomplete Style*/
+
+/*YahooAutocomplete Style @1-A796CEBE*/
+.sex_department_patient_re1s_other_namesYahooAutocomplete2 .yui-ac-container {
+    left: 0;
+}
+.sex_department_patient_re1s_other_namesYahooAutocomplete2 input {
+    position: relative;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    *width: expression(parseInt(this.parentNode.currentStyle.width)-6+'px');
+}
+.sex_department_patient_re1s_other_names_container {
+    display: block;
+}
+.YUIAutcompleteHighlight {
+    background-color: #AAAAAA;
+}
+.YUIAutcompletePreHighlight {
+    background-color: #DDDDDD;
+}
+/*End YahooAutocomplete Style*/
+
+/*YahooAutocomplete Style @1-DFC4481E*/
+.sex_department_patient_re1s_hospital_noYahooAutocomplete3 .yui-ac-container {
+    left: 0;
+}
+.sex_department_patient_re1s_hospital_noYahooAutocomplete3 input {
+    position: relative;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    *width: expression(parseInt(this.parentNode.currentStyle.width)-6+'px');
+}
+.sex_department_patient_re1s_hospital_no_container {
+    display: block;
+}
+.YUIAutcompleteHighlight {
+    background-color: #AAAAAA;
+}
+.YUIAutcompletePreHighlight {
+    background-color: #DDDDDD;
+}
+/*End YahooAutocomplete Style*/
+
+/*YahooAutocomplete Style @1-43F24859*/
+.sex_department_patient_re1s_patient_idYahooAutocomplete4 .yui-ac-container {
+    left: 0;
+}
+.sex_department_patient_re1s_patient_idYahooAutocomplete4 input {
+    position: relative;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    *width: expression(parseInt(this.parentNode.currentStyle.width)-6+'px');
+}
+.sex_department_patient_re1s_patient_id_container {
+    display: block;
+}
+.YUIAutcompleteHighlight {
+    background-color: #AAAAAA;
+}
+.YUIAutcompletePreHighlight {
+    background-color: #DDDDDD;
+}
+/*End YahooAutocomplete Style*/
+
+/*YahooAutocomplete Style @1-8FFCF732*/
+.sex_department_patient_re1s_result_idYahooAutocomplete5 .yui-ac-container {
+    left: 0;
+}
+.sex_department_patient_re1s_result_idYahooAutocomplete5 input {
+    position: relative;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    *width: expression(parseInt(this.parentNode.currentStyle.width)-6+'px');
+}
+.sex_department_patient_re1s_result_id_container {
+    display: block;
+}
+.YUIAutcompleteHighlight {
+    background-color: #AAAAAA;
+}
+.YUIAutcompletePreHighlight {
+    background-color: #DDDDDD;
+}
+/*End YahooAutocomplete Style*/
+

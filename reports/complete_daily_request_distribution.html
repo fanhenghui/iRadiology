@@ -1,0 +1,77 @@
+<!-- Requires jquery, highcharts and exporting.js -->
+<!-- Div that will hold the line chart-->
+<div id="mycontainer" style="min-width: 310px; height: 400px; margin: 0 auto">
+</div>
+<script type="text/javascript">
+  $(function () {
+        $('#mycontainer').highcharts({
+            chart: {
+                zoomType: 'x',
+                spacingRight: 20
+            },
+            title: {
+                text: 'Daily Patients Radiology Request Distribution - iRadiology v1.0'
+            },
+            subtitle: {
+                text: document.ontouchstart === undefined ?
+                    'Click and drag in the plot area to zoom in' :
+                    'Pinch the chart to zoom in'
+            },
+            xAxis: {
+                type: 'datetime',
+                maxZoom: 14 * 24 * 3600000, // fourteen days
+                title: {
+                    text: null
+                }
+            },
+            yAxis: {
+                title: {
+                    text: 'No. of Patient Requests'
+                }
+            },
+            tooltip: {
+                shared: true
+            },
+            legend: {
+                enabled: false
+            },
+            plotOptions: {
+                area: {
+                    fillColor: {
+                        linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1},
+                        stops: [
+                            [0, Highcharts.getOptions().colors[0]],
+                            [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
+                        ]
+                    },
+                    lineWidth: 1,
+                    marker: {
+                        enabled: false
+                    },
+                    shadow: false,
+                    states: {
+                        hover: {
+                            lineWidth: 1
+                        }
+                    },
+                    threshold: null
+                }
+            },
+    
+            series: [{
+                type: 'area',
+                name: 'No. of Patients',
+                pointInterval: 24 * 3600 * 1000,
+                pointStart: Date.UTC(2013, 8, 02),
+                data: [  234, 220, 213, 228, 211, 50, 06, 323, 300, 301, 304, 308, 70,14,
+                		400, 402, 390, 451, 380, 100, 20, 440, 550, 480, 491, 449, 120, 31,
+                		224, 280, 232, 321, 200, 56, 30, 270, 311, 290, 280, 270, 70, 60,
+                		402, 405, 408, 411, 399, 180, 69, 190, 230, 220, 210, 200, 78, 44,
+                		210, 200, 180, 178, 177, 67, 18                      
+                ]
+            }]
+        });
+    });
+    
+	</script>
+

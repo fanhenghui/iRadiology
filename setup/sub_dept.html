@@ -1,0 +1,130 @@
+<script language="JavaScript" type="text/javascript">
+//Begin CCS script
+//Include Common JSFunctions @1-A2F3288E
+</script>
+<script language="JavaScript" src="{page:pathToRoot}ClientI18N.php?file=Functions.js&amp;locale={res:CCS_LocaleID}" type="text/javascript" charset="utf-8"></script>
+<script language="JavaScript" type="text/javascript">
+//End Include Common JSFunctions
+
+//sub_deptsub_dept1Button_Submit_OnClick @11-049359EF
+function sub_deptsub_dept1Button_Submit_OnClick()
+{
+    var result = true;
+//End sub_deptsub_dept1Button_Submit_OnClick
+
+//Confirmation Message @12-257FDD03
+    return confirm('Submit records?');
+//End Confirmation Message
+
+//Close sub_deptsub_dept1Button_Submit_OnClick @11-BC33A33A
+    return result;
+}
+//End Close sub_deptsub_dept1Button_Submit_OnClick
+
+//sub_deptsub_dept1Cancel_OnClick @13-3FC155A9
+function sub_deptsub_dept1Cancel_OnClick()
+{
+    disableValidation = true;
+    return true;
+}
+//End sub_deptsub_dept1Cancel_OnClick
+
+//bind_events @1-DB28E4E3
+function sub_dept_bind_events() {
+    addEventHandler("sub_deptsub_dept1Button_Submit", "click", sub_deptsub_dept1Button_Submit_OnClick);
+    addEventHandler("sub_deptsub_dept1Cancel", "click", sub_deptsub_dept1Cancel_OnClick);
+}
+//End bind_events
+
+//End CCS script
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="{page:pathToRoot}css/bootstrap.css">
+<link rel="stylesheet" href="{page:pathToRoot}css/bootstrap-responsive.css">
+<link rel="stylesheet" href="{page:pathToRoot}css/iradiology.css">
+<script language="JavaScript" type="text/javascript">
+
+</script>
+<!-- BEGIN Record sub_deptSearch -->
+<form id="sub_deptsub_deptSearch" method="" action="{Action}" name="{HTMLFormName}">
+  <legend>Add/Edit Sub-Departments</legend>
+ 
+  <!-- BEGIN Error -->
+  <div class="f-row">
+    {Error} 
+  </div>
+ <!-- END Error -->
+  <div class="f-row">
+    <div class="f-inputs">
+      <select name="{s_department_id_Name}" id="sub_deptsub_deptSearchs_department_id">
+        <option value="">Search by Department</option>
+ {s_department_id_Options} 
+      </select> 
+     </div>
+     
+     <div class="f-inputs">
+      <!-- BEGIN Button Button_DoSearch --><button name="{Button_Name}" type="submit" value="Search" id="sub_deptsub_deptSearchButton_DoSearch" class="btn btn-success">Search</button><!-- END Button Button_DoSearch -->
+    </div>
+ 
+  </div>
+</form>
+<!-- END Record sub_deptSearch --><br>
+<!-- BEGIN EditableGrid sub_dept1 -->
+<form id="sub_deptsub_dept1" name="{HTMLFormName}" action="{Action}" method="post">
+  <input type="hidden" name="FormState" value="{FormState}">{FormScript} 
+  <table class="table table-condensed table-striped">
+    <!-- BEGIN Error -->
+    <tr>
+      <td colspan="4">{Error}</td> 
+    </tr>
+ <!-- END Error -->
+    <tr>
+      <th>Sub-Dept S/No.</th>
+ 
+      <th>Sub-Departments</th>
+ 
+      <th>Department</th>
+ 
+      <th>Delete?</th>
+ 
+    </tr>
+ 
+    <!-- BEGIN Row -->
+    <!-- BEGIN RowError -->
+    <tr>
+      <td colspan="4">{Error}</td> 
+    </tr>
+ <!-- END RowError -->
+    <tr>
+      <td>{sub_dept_id}</td> 
+      <td><input type="text" name="{sub_dept_Name}" value="{sub_dept}" maxlength="45" size="45" id="sub_deptsub_dept1sub_dept_{sub_deptsub_dept1:rowNumber}"></td> 
+      <td>
+        <select name="{department_id_Name}" id="sub_deptsub_dept1department_id_{sub_deptsub_dept1:rowNumber}">
+          <option value="">Select Department</option>
+ {department_id_Options} 
+        </select>
+ </td> 
+      <td>
+        <!-- BEGIN CheckBox CheckBox_Delete --><input type="checkbox" name="{CheckBox_Delete_Name}" value="1" {CheckBox_Delete} id="sub_deptsub_dept1CheckBox_Delete_{sub_deptsub_dept1:rowNumber}"><!-- END CheckBox CheckBox_Delete -->&nbsp;</td> 
+    </tr>
+ <!-- END Row -->
+    <!-- BEGIN NoRecords -->
+    <tr>
+      <td colspan="4">
+No records of Sub-Departments found!</td> 
+    </tr>
+ <!-- END NoRecords -->
+    <tr>
+      <td style="text-align:right;" colspan="4">
+        <!-- BEGIN Button Button_Submit --><button name="{Button_Name}" type="submit" value="Submit" id="sub_deptsub_dept1Button_Submit" class="btn btn-primary">Submit</button><!-- END Button Button_Submit -->
+        <!-- BEGIN Button Cancel --><button name="{Button_Name}" type="submit" value="Cancel" id="sub_deptsub_dept1Cancel" class="btn">Cancel</button><!-- END Button Cancel --></td> 
+    </tr>
+ 
+  </table>
+</form>
+<!-- END EditableGrid sub_dept1 --><br>
+<script type="text/javascript" src="{page:pathToRoot}js/jquery.js"></script>
+<script type="text/javascript" src="{page:pathToRoot}js/bootstrap.min.js"></script>
+<script type="text/javascript">
+	$('#popover').popover();
+</script>

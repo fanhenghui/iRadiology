@@ -1,0 +1,44 @@
+/*
+ * YUI slider has a different HTML markup in CCS, hence we should have some additional styles.
+ * Here are CCS extensions to YUI slider styles.
+ */
+ 
+.ccs-h-slider {
+	float: left;
+}
+
+.ccs-slider-bar {
+	position: absolute;
+}
+
+.ccs-slider-line-margin {
+	float: left;
+	height: 28px;
+	width: 8px; /* slider width / 2 */
+}
+
+.ccs-slider-line-l {
+	float: left;
+	background-image: url(Images/yui/slider/se.gif);
+	height: 28px;
+	width: 1px;
+}
+
+.ccs-slider-line-c {
+	float: left;
+	background-image: url(Images/yui/slider/sc.gif);
+	height: 28px;
+}
+
+.ccs-slider-line-r {
+	float: left;
+	background-image: url(Images/yui/slider/se.gif);
+	height: 28px;
+	width: 1px;
+}
+
+.ccs-slider-thumb {
+	position: relative;
+	width: 17px;
+	top:3px;
+}

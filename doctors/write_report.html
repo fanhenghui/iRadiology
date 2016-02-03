@@ -1,0 +1,268 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>Patient Report - iRadiology v1.0</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+<link rel="stylesheet" href="../css/bootstrap-responsive.css">
+<link rel="stylesheet" href="../css/iradiology.css">
+<script language="JavaScript" type="text/javascript">
+//Begin CCS script
+//Include Common JSFunctions @1-9722A627
+</script>
+<script language="JavaScript" src="../ClientI18N.php?file=Functions.js&amp;locale={res:CCS_LocaleID}" type="text/javascript" charset="utf-8"></script>
+<script language="JavaScript" type="text/javascript">
+//End Include Common JSFunctions
+
+//Include User Scripts @1-054997F3
+</script>
+<script language="JavaScript" src="../ckeditor/ckeditor.js" type="text/javascript"></script>
+<script language="JavaScript" type="text/javascript">
+//End Include User Scripts
+
+//resultresult1_OnLoad @57-A85F30F4
+function resultresult1_OnLoad()
+{
+    var result = true;
+//End resultresult1_OnLoad
+
+//Attach CKeditor @70-6B1DC082
+    try {
+        var resultresult1_CK_BasePath = "{page:pathToRoot}ckeditor/";
+        CKEDITOR.replace(this.getAttribute("id"), {
+            height: "150",
+            width: "415",
+            toolbar: "Basic"
+        });
+    } catch (e) {}
+//End Attach CKeditor
+
+//Close resultresult1_OnLoad @57-BC33A33A
+    return result;
+}
+//End Close resultresult1_OnLoad
+
+//resultconclusion_OnLoad @58-B8F7DDF3
+function resultconclusion_OnLoad()
+{
+    var result = true;
+//End resultconclusion_OnLoad
+
+//Attach CKeditor @71-87B2166E
+    try {
+        var resultconclusion_CK_BasePath = "{page:pathToRoot}ckeditor/";
+        CKEDITOR.replace(this.getAttribute("id"), {
+            height: "150",
+            width: "415",
+            toolbar: "Basic"
+        });
+    } catch (e) {}
+//End Attach CKeditor
+
+//Close resultconclusion_OnLoad @58-BC33A33A
+    return result;
+}
+//End Close resultconclusion_OnLoad
+
+//resultButton_Cancel_OnClick @51-F1334BDF
+function resultButton_Cancel_OnClick()
+{
+    disableValidation = true;
+    return true;
+}
+//End resultButton_Cancel_OnClick
+
+//bind_events @1-D762E8B2
+function bind_events() {
+    try { footer_bind_events(); } catch(e) {}
+    try { header_doctors_wrpt_bind_events(); } catch(e) {}
+    addEventHandler("resultresult1", "load", resultresult1_OnLoad);
+    addEventHandler("resultconclusion", "load", resultconclusion_OnLoad);
+    addEventHandler("resultButton_Cancel", "click", resultButton_Cancel_OnClick);
+}
+//End bind_events
+
+window.onload = bind_events; //Assign bind_events @1-19F7B649
+
+//End CCS script
+</script>
+</head>
+<body>
+{header_doctors_wrpt}
+<div class="navbar">
+  <div class="navbar-inner">
+    <ul class="nav">
+      <li><a>&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+ 
+      <li><a><strong>&nbsp;&nbsp;&nbsp;Designation: </strong>{Label1}</a></li>
+ 
+      <li><a>&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+ 
+      <li><a>&nbsp;&nbsp;</a></li>
+ 
+      <li><a><strong>Department: </strong>{Label3}</a></li>
+ 
+      <li><a>&nbsp;&nbsp;</a></li>
+ 
+      <li><a>&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+ 
+      <li><a>&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+ 
+      <li class="dropdown"><a class="dropdown-toggle" id="dropdown2" data-toggle="dropdown">&nbsp;&nbsp;<span class="icon-user"></span> {Label2}<b class="caret"></b></a>
+ 		<ul class="dropdown-menu" role="menu" aria-labelledby="dropdown2">
+ 			<li role="presentation"><a href="../login/change_password.php" role="menuitem" tabindex="-1">Change Password</a></li>
+ 		</ul>
+ 	  </li>
+ 
+    </ul>
+ 
+  </div>
+</div>
+<div style="margin-right:5px; margin-left:5px">
+  <!-- BEGIN Grid status_result_occupation -->
+  <legend>Patient Information</legend>
+ 
+  <table class="table">
+    <tr>
+      <th>Report Number</th>
+ 
+      <th>Surname</th>
+ 
+      <th>Other Names</th>
+ 
+      <th>Age</th>
+ 
+      <th>Sex</th>
+ 
+      <th>Occupation</th>
+ 
+      <th>Appointment Time</th>
+ 
+      <th>Status</th>
+ 
+    </tr>
+ 
+    <!-- BEGIN Row -->
+    <tr>
+      <td><label class="label label-success">{patient_id}-{result_id}</label>&nbsp;</td> 
+      <td>{surname}&nbsp;</td> 
+      <td>{other_names}&nbsp;</td> 
+      <td>{age}&nbsp;</td> 
+      <td>{sex}&nbsp;</td> 
+      <td>{occupation}&nbsp;</td> 
+      <td>{appointment_time}&nbsp;</td> 
+      <td><label class="label label-warning">{status}</label>&nbsp;</td> 
+    </tr>
+ <!-- END Row -->
+    <!-- BEGIN NoRecords -->
+    <tr>
+      <td colspan="8"><label class="label label-important">You are not Suppose to be Here!</label></td> 
+    </tr>
+ <!-- END NoRecords -->
+  </table>
+ <!-- END Grid status_result_occupation -->
+  <!-- BEGIN Record result -->
+  <form id="result" method="post" action="{Action}" name="{HTMLFormName}">
+    <legend>Report Information</legend>
+ 
+    <!-- BEGIN Error -->
+    <div class="f-row">
+      <label class="label label-warning">{Error}</label> 
+    </div>
+ <!-- END Error --><fieldset>
+    <div class="row-fluid">
+      <div class="span6">
+        <div class="row-fluid">
+          <div class="span5">
+            <div class="f-row">
+              <label class="label">Clinic/Ward</label> 
+              <div class="f-inputs">
+                <input type="hidden" name="{clinic_id_Name}" value="{clinic_id}" id="resultclinic_id">{Label1} 
+              </div>
+ 
+            </div>
+ 
+          </div>
+ 
+          <div class="span7">
+            <div class="f-row">
+              <label class="label">Sub Department</label> 
+              <div class="f-inputs">
+                <input type="hidden" name="{sup_dept_id_Name}" value="{sup_dept_id}" id="resultsup_dept_id">{Label2} 
+              </div>
+ 
+            </div>
+ 
+          </div>
+ 
+        </div>
+ 
+        <hr>
+        <div class="f-row">
+          <strong>Primary Diagnosis</strong> 
+          <div class="f-inputs">
+            {primary_diagnosis} 
+          </div>
+ 
+        </div><br><br>
+ 
+        <div class="f-row">
+          <strong>Clinical Notes</strong> 
+          <div class="f-inputs">
+            {clinical_notes} 
+          </div>
+ 		
+        </div><hr>
+        <div class="f-row">
+        <label class="label">Statistical Conclusion</label>
+ 		<div class="f-inputs">
+        <select class="span9" name="{stat_conclusion_Name}" id="resultstat_conclusion">
+          <option value="">Kindly Select Defined Conclusion</option>
+ 			{stat_conclusion_Options}
+        </select>
+ 	   </div>
+ 	  </div>
+ 	  
+      </div>
+ 
+      <div class="span6">
+        <div class="f-row">
+          <label><strong>Result</strong></label> 
+          <div class="f-inputs">
+            <textarea name="{result1_Name}" placeholder="Details of the Result here. This Text Area can expanded as required!" cols="30" rows="4" id="resultresult1">{result1}</textarea>
+          </div>
+ 
+        </div><br>
+ 
+        <div class="f-row">
+          <label><strong>Conclusion</strong></label> 
+          <div class="f-inputs">
+            <textarea name="{conclusion_Name}" placeholder="The conclusion as will be on the report here. Expand Text Area as required!" cols="30" rows="4" id="resultconclusion">{conclusion}</textarea>
+          </div>
+ 
+        </div>
+ </fieldset> <br>
+        <div class="f-row f-actions">
+          <div class="f-inputs pull-right">
+            <!-- BEGIN Button Button_Update --><button name="{Button_Name}" type="submit" value="Submit" id="resultButton_Update" class="btn btn-primary">Submit Result</button><!-- END Button Button_Update -->
+            <!-- BEGIN Button Button_Cancel --><button name="{Button_Name}" type="submit" value="Cancel" id="resultButton_Cancel" class="btn">Cancel</button><!-- END Button Button_Cancel -->
+          </div>
+ 
+        </div>
+ 
+      </div>
+ 
+    </div>
+ 
+  </form>
+ <!-- END Record result --><br>
+</div>
+{footer}
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+<script type="text/javascript">
+	$('#popover').popover();
+</script>
+</body>
+</html>

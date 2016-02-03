@@ -1,0 +1,137 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title></title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+<link rel="stylesheet" href="../css/bootstrap-responsive.css">
+</head>
+<body>
+<!-- BEGIN Grid users_clinic_status_stati -->
+<table class="table table-condensed table-hover">
+  <!-- BEGIN Row -->
+  <tr class="Row"><td colspan="4"><a href="{Link1_Src}" id="users_clinic_status_statiLink1_{users_clinic_status_stati:rowNumber}">Print Radiology Report</a></td></tr>
+  <tr class="Row">
+    <th scope="row">Patient Number</th>
+ 
+    <td><label class="label label-success">{patient_patient_id}-{result_id}</label>&nbsp;</td> 
+    <th scope="row">Status</th>
+ 
+    <td><label class="label label-info">{status}&nbsp;</label></td> 
+  </tr>
+ 
+  <tr class="Row">
+    <th scope="row">Department</th>
+ 
+    <td>{department}&nbsp;</td> 
+    <th scope="row">Sub Department</th>
+ 
+    <td>{sub_dept}&nbsp;</td> 
+  </tr>
+ 
+  <tr class="Row">
+    <th scope="row">Surname</th>
+ 
+    <td>{surname}&nbsp;</td> 
+    <th scope="row">Other Names</th>
+ 
+    <td>{other_names}&nbsp;</td> 
+  </tr>
+ 
+  <tr class="Row">
+    <th scope="row">Age</th>
+ 
+    <td>{age}&nbsp;</td> 
+    <th scope="row">Sex</th>
+ 
+    <td>{sex}&nbsp;</td> 
+  </tr>
+ 
+  <tr class="Row">
+    <th scope="row">Occupation</th>
+ 
+    <td>{occupation}&nbsp;</td> 
+    <th scope="row">L M P &amp; Clinic/Ward</th>
+ 
+    <td>{l_m_p1}&nbsp; {clinic}</td> 
+  </tr>
+ 
+  <tr class="Row">
+    <th scope="row">Result</th>
+ 
+    <td colspan="3">{result}&nbsp;</td> 
+  </tr>
+ 
+  <tr>
+    <th scope="row">Conclusion</th>
+ 
+    <td colspan="3">{conclusion}&nbsp;</td> 
+  </tr>
+ 
+  <tr class="Row">
+    <th scope="row">Clinical Notes</th>
+ 
+    <td colspan="3">{clinical_notes}&nbsp;</td> 
+  </tr>
+ 
+  <tr class="Row">
+    <th scope="row">Provisional Diagnosis</th>
+ 
+    <td colspan="3">{primary_diagnosis}&nbsp;</td> 
+  </tr>
+ 
+  <tr class="Row">
+    <th scope="row">Consultant I/C</th>
+ 
+    <td>{consultant_i_c}&nbsp;</td> 
+    <th scope="row">Amount To Pay</th>
+ 
+    <td>{amount_to_pay}&nbsp;</td> 
+  </tr>
+ 
+  <tr class="Row">
+    <th scope="row">Date</th>
+ 
+    <td>{date}&nbsp;</td> 
+    <th scope="row">Hospital No</th>
+ 
+    <td>{hospital_no}&nbsp;</td> 
+  </tr>
+ 
+  <tr class="Row">
+    <th scope="row">Doctor</th>
+ 
+    <td>{title}&nbsp;{first_name}&nbsp;{last_name}</td> 
+    <th scope="row">Discrete Conclusion</th>
+ 
+    <td>{statistical_conclusion}&nbsp;</td> 
+  </tr>
+ 
+  <tr class="Row">
+    <th scope="row">Appointment Date</th>
+ 
+    <td>{appointment_date}&nbsp;</td> 
+    <th scope="row">Appointment Time</th>
+ 
+    <td>{appointment_time}&nbsp;</td> 
+  </tr>
+ <!-- END Row -->
+  <!-- BEGIN NoRecords -->
+  <tr class="NoRecords">
+    <td colspan="4">NOTHING TO DISPLAY! 'COS YOU ARE NOT SUPPOSE TO BE HERE!!</td> 
+  </tr>
+ <!-- END NoRecords -->
+  <tr class="Footer">
+    <td colspan="4">&nbsp;</td> 
+  </tr>
+ 
+</table>
+<!-- END Grid users_clinic_status_stati -->
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+<script type="text/javascript">
+	$('#popover').popover();
+</script>
+</body>
+</html>

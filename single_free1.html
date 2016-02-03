@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>Template</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/bootstrap-responsive.css">
+<link rel="stylesheet" href="css/iradiology.css">
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script src="js/highcharts/highcharts.js"></script>
+<script src="js/highcharts/modules/exporting.js"></script>
+</head>
+<body>
+{header}
+<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto">
+</div>
+<script type="text/javascript">
+$(function () {
+        $('#container').highcharts({
+            chart: {
+            },
+            title: {
+                text: 'Comparing Patients Gatrointestinal Investigations based on Age & Sex Distribution - iRadiology v1.0'
+            },
+            xAxis: {
+                categories: ['0-5 yrs', '6-14 yrs', '15-19 yrs', '19-25 yrs', '26-35 yrs', '36-45 yrs', '46-60 yrs', '>60 yrs']
+            },
+            yAxis: {
+                title: {
+                    text: 'No. of Patients'
+                }
+            },
+            tooltip: {
+                formatter: function() {
+                    var s;
+                    if (this.point.name) { // the pie chart
+                        s = ''+
+                            this.point.name +': '+ this.y +' patients';
+                    } else {
+                        s = ''+
+                            this.x +' years' +': '+ this.y;
+                    }
+                    return s;
+                }
+            },
+            labels: {
+                items: [{
+                    html: 'Total Gender Distribution',
+                    style: {
+                        left: '40px',
+                        top: '8px',
+                        color: 'black'
+                    }
+                }]
+            },
+            series: [{
+                type: 'column',
+                name: 'Male',
+                data: [10, 20, 25, 120, 80, 52, 15, 3]
+            }, {
+                type: 'column',
+                name: 'Total (M+F)',
+                data: [16, 58, 70, 200, 170, 120, 44, 10]
+            }, {
+                type: 'column',
+                name: 'Female',
+                data: [6, 38, 45, 80, 90, 68, 29, 7]
+            }, {
+                type: 'spline',
+                name: 'Gender Average',
+                data: [8, 29, 35, 100, 85, 60, 22, 5],
+                marker: {
+                	lineWidth: 2,
+                	lineColor: Highcharts.getOptions().colors[3],
+                	fillColor: 'white'
+                }
+            }, {
+                type: 'pie',
+                name: 'Total Gender Distribution',
+                data: [{
+                    name: 'Male',
+                    y: 325,
+                    color: Highcharts.getOptions().colors[0] // Jane's color
+                }, {
+                    name: 'Female',
+                    y: 368,
+                    color: Highcharts.getOptions().colors[2] // John's color
+                }],
+                center: [100, 80],
+                size: 100,
+                showInLegend: false,
+                dataLabels: {
+                    enabled: false
+                }
+            }]
+        });
+    });
+		</script>
+		{footer}
+<script type="text/javascript">
+	$('#popover').popover();
+</script>
+</body>
+</html>

@@ -1,0 +1,411 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>Receptionist Home - iRadiology v1.0</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+<link rel="stylesheet" href="../css/bootstrap-responsive.css">
+<link rel="stylesheet" href="../css/iradiology.css">
+<script language="JavaScript" type="text/javascript">
+//Begin CCS script
+//Include Common JSFunctions @1-9722A627
+</script>
+<script language="JavaScript" src="../ClientI18N.php?file=Functions.js&amp;locale={res:CCS_LocaleID}" type="text/javascript" charset="utf-8"></script>
+<script language="JavaScript" type="text/javascript">
+//End Include Common JSFunctions
+
+//Include User Scripts @1-546DABBA
+</script>
+<script language="JavaScript" src="../js/yui/build/yahoo/yahoo-min.js" type="text/javascript"></script>
+<script language="JavaScript" src="../js/yui/build/yahoo-dom-event/yahoo-dom-event.js" type="text/javascript"></script>
+<script language="JavaScript" src="../js/yui/build/datasource/datasource-min.js" type="text/javascript"></script>
+<script language="JavaScript" src="../js/yui/build/connection/connection-min.js" type="text/javascript"></script>
+<script language="JavaScript" src="../js/yui/build/animation/animation-min.js" type="text/javascript"></script>
+<script language="JavaScript" src="../js/yui/build/json/json-min.js" type="text/javascript"></script>
+<script language="JavaScript" src="../js/yui/build/autocomplete/autocomplete-min.js" type="text/javascript"></script>
+<script language="JavaScript" src="../js/yui/autocomplete-commons.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="../js/yui/build/autocomplete/assets/skins/sam/autocomplete.css">
+<link rel="stylesheet" type="text/css" href="index_style.css">
+<script language="JavaScript" type="text/javascript">
+//End Include User Scripts
+
+//patientButton1_OnClick @74-83C9B175
+function patientButton1_OnClick()
+{
+    disableValidation = true;
+    return true;
+}
+//End patientButton1_OnClick
+
+//Initialize sex_occupation_patient1s_keywordYahooAutocomplete1 @169-18A45629
+function sex_occupation_patient1s_keywordYahooAutocomplete1_start() {
+    initAutocomplete("sex_occupation_patient1s_keyword", "../services/reception_index_sex_occupation_patient1_s_keyword_YahooAutocomplete1.php");
+}
+//End Initialize sex_occupation_patient1s_keywordYahooAutocomplete1
+
+//Initialize sex_occupation_patient1s_keywordYahooAutocomplete2 @170-50000CBC
+function sex_occupation_patient1s_keywordYahooAutocomplete2_start() {
+    initAutocomplete("sex_occupation_patient1s_keyword", "../services/reception_index_sex_occupation_patient1_s_keyword_YahooAutocomplete2.php");
+}
+//End Initialize sex_occupation_patient1s_keywordYahooAutocomplete2
+
+//Initialize sex_occupation_patient1s_keywordYahooAutocomplete3 @171-DEB338F0
+function sex_occupation_patient1s_keywordYahooAutocomplete3_start() {
+    initAutocomplete("sex_occupation_patient1s_keyword", "../services/reception_index_sex_occupation_patient1_s_keyword_YahooAutocomplete3.php");
+}
+//End Initialize sex_occupation_patient1s_keywordYahooAutocomplete3
+
+//Initialize title_status_users_result1s_patient_idYahooAutocomplete1 @172-1A9F1A89
+function title_status_users_result1s_patient_idYahooAutocomplete1_start() {
+    initAutocomplete("title_status_users_result1s_patient_id", "../services/reception_index_title_status_users_result1_s_patient_id_YahooAutocomplete1.php");
+}
+//End Initialize title_status_users_result1s_patient_idYahooAutocomplete1
+
+//bind_events @1-B14682E8
+function bind_events() {
+    try { footer_bind_events(); } catch(e) {}
+    try { header_receptionist_bind_events(); } catch(e) {}
+    sex_occupation_patient1s_keywordYahooAutocomplete1_start();
+    sex_occupation_patient1s_keywordYahooAutocomplete2_start();
+    sex_occupation_patient1s_keywordYahooAutocomplete3_start();
+    title_status_users_result1s_patient_idYahooAutocomplete1_start();
+    addEventHandler("patientButton1", "click", patientButton1_OnClick);
+}
+//End bind_events
+
+window.onload = bind_events; //Assign bind_events @1-19F7B649
+
+//End CCS script
+</script>
+</head>
+<body>
+{header_receptionist}
+<div class="navbar">
+  <div class="navbar-inner">
+    <ul class="nav">
+      <li><a>&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+ 
+      <li><a><strong>&nbsp;&nbsp;&nbsp;Designation: </strong>{Label1}</a></li>
+ 
+      <li><a>&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+ 
+      <li><a>&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+ 
+      <li><a>&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+ 
+      <li><a>&nbsp;&nbsp;</a></li>
+ 
+      <li><a>&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+ 
+      <li><a>&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+ 
+      <li><a>&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+ 
+      <li><a>&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+ 
+      <li class="dropdown"><a class="dropdown-toggle" id="dropdown2" data-toggle="dropdown">&nbsp;&nbsp;<span class="icon-user"></span> {Label2} <b class="caret"></b></a>
+ 		<ul class="dropdown-menu" role="menu" aria-labelledby="dropdown2">
+ 			<li role="presentation"><a href="../login/change_pwd.php" role="menuitem" tabindex="-1">Change Password</a></li>
+ 		</ul>
+ 	  </li>
+    </ul>
+ 
+  </div>
+</div>
+<div style="margin-left:5px; margin-right:5px">
+  <h2>How can I be of help today?</h2>
+ 
+  <hr>
+  <div class="accordion" id="accordion2">
+    <div class="accordion-group">
+      <div class="accordion-heading">
+<a href="#collapseOne" class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2"><strong>Search Patients</strong> </a> 
+      </div>
+ 
+      <div id="collapseOne" class="accordion-body collapse in">
+        <div class="accordion-inner">
+        <legend>Find Patient</legend>
+          <!-- BEGIN Record sex_occupation_patient1 -->
+          <form id="sex_occupation_patient1" method="post" action="{Action}" class="form-search" name="{HTMLFormName}">
+            <p>Search patient using either their <strong>Surname, Other Names </strong>or<strong> Hospital Number</strong>. Click <i>'Proceed'</i> to complete radiology request information and schedule he/her for a doctor's appointment. OR click the patient id to adjust some personal informations about the patient.</p>
+ 
+            <p>Click <i>'Add New'</i> to register a new patient in the system if the patient is not in the system</p>
+ 
+            <table>
+              <!-- BEGIN Error -->
+              <tr>
+                <td colspan="2">{Error}</td> 
+              </tr>
+ <!-- END Error -->
+              <tr>
+                <td>
+                  <div class="input-append offset5">
+                    <!-- BEGIN TextBox s_keyword --><input class="search-query" type="text" placeholder="Name(s) Or Hospital Number" name="{s_keyword_Name}" value="{s_keyword}" maxlength="70" size="50" id="sex_occupation_patient1s_keyword" autocomplete="off"><!-- END TextBox s_keyword -->
+                    <!-- BEGIN Button Button_DoSearch --><button name="{Button_Name}" type="submit" value="Search" id="sex_occupation_patient1Button_DoSearch" class="btn">Search</button><!-- END Button Button_DoSearch -->
+                  </div>
+ </td> 
+              </tr>
+ 
+            </table>
+ 
+          </form>
+ <!-- END Record sex_occupation_patient1 --><br>
+          <!-- BEGIN Grid sex_occupation_patient -->
+          <table class="table table-striped">
+            <tr>
+              <th>Patient's No.</th>
+ 
+              <th>Surname</th>
+ 
+              <th>Other Names</th>
+ 
+              <th>Age</th>
+ 
+              <th>Hospital No.</th>
+ 
+              <th>Occupation</th>
+ 
+              <th>Sex</th>
+ 
+              <th>&nbsp;</th>
+ 
+            </tr>
+ 
+            <!-- BEGIN Row -->
+            <tr>
+              <td><a href="{patient_id_Src}" id="sex_occupation_patientpatient_id_{sex_occupation_patient:rowNumber}">{patient_id}</a>&nbsp;</td> 
+              <td><a href="{surname_Src}" id="sex_occupation_patientsurname_{sex_occupation_patient:rowNumber}">{surname}</a>&nbsp;</td> 
+              <td>{other_names}&nbsp;</td> 
+              <td>{age}&nbsp;</td> 
+              <td>{hospital_no}&nbsp;</td> 
+              <td>{occupation}&nbsp;</td> 
+              <td>{sex}&nbsp;</td> 
+              <td><a href="{Link1_Src}" id="sex_occupation_patientLink1_{sex_occupation_patient:rowNumber}">Proceed</a></td> 
+            </tr>
+ <!-- END Row -->
+            <!-- BEGIN NoRecords -->
+            <tr>
+              <td colspan="8"><label class="label label-warning">No patient found! Try another search parameter or click 'Add New' to register this patient.</label></td> 
+            </tr>
+ <!-- END NoRecords -->
+            <tr>
+              <td colspan="8"><a href="{sex_occupation_patient_Insert_Src}" id="sex_occupation_patientsex_occupation_patient_Insert">Add New</a>&nbsp;</td> 
+            </tr>
+ 
+          </table>
+ <!-- END Grid sex_occupation_patient -->
+          <!-- BEGIN Record patient -->          
+ {Label1} {Label2} 
+          <form id="patient" method="post" action="{Action}" name="{HTMLFormName}">
+            <table class="table table-hover">
+              <!-- BEGIN Error -->
+              <tr>
+                <td colspan="4">{Error}</td> 
+              </tr>
+ <!-- END Error -->
+              <tr>
+                <th>Surname</th>
+ 
+                <td><input type="text" placeholder="Surname" name="{surname_Name}" value="{surname}" maxlength="70" size="50" id="patientsurname"></td> 
+                <th>Other Names</th>
+ 
+                <td><input type="text" placeholder="Other Name(s)" name="{other_names_Name}" value="{other_names}" maxlength="100" size="50" id="patientother_names"></td> 
+              </tr>
+ 
+              <tr>
+                <th>Sex</th>
+ 
+                <td>
+                  <select name="{sex_id_Name}" id="patientsex_id">
+                    <option value="">Select Value</option>
+ {sex_id_Options} 
+                  </select>
+ </td> 
+                <th>Occupation</th>
+ 
+                <td>
+                  <select name="{occupation_id_Name}" id="patientoccupation_id">
+                    <option value="">Select Value</option>
+ {occupation_id_Options} 
+                  </select>
+ </td> 
+              </tr>
+ 
+              <tr>
+                <th>Age</th>
+ 
+                <td><input type="text" placeholder="Age -Numbers only-" name="{age_Name}" value="{age}" maxlength="10" size="10" id="patientage"></td> 
+                <th>Hospital No.</th>
+ 
+                <td><input type="text" placeholder="Hospital Number" name="{hospital_no_Name}" value="{hospital_no}" maxlength="45" size="45" id="patienthospital_no"></td> 
+              </tr>
+ 
+              <tr>
+                <td colspan="4" style="text-align: right">
+                  <!-- BEGIN Button Button_Insert --><button name="{Button_Name}" type="submit" value="Add" id="patientButton_Insert" class="btn btn-primary">Register Patient</button><!-- END Button Button_Insert -->
+                  <!-- BEGIN Button Button_Update --><button name="{Button_Name}" type="submit" value="Submit" id="patientButton_Update" class="btn btn-primary">Update Record</button><!-- END Button Button_Update -->
+                  <!-- BEGIN Button Button1 --><button name="{Button_Name}" type="submit" value="Button1" id="patientButton1" class="btn">Cancel</button><!-- END Button Button1 --></td> 
+              </tr>
+ 
+            </table>
+ 
+          </form>
+ <!-- END Record patient --><br>
+        </div>
+ 
+      </div>
+ 
+    </div>       
+ 
+    <div class="accordion-group">
+      <div class="accordion-heading">
+<a href="#collapseFour" class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2"><strong>View Todays Appointments</strong></a> 
+      </div>
+ 
+      <div id="collapseFour" class="accordion-body collapse">
+        <div class="accordion-inner">
+        <legend>Today's Appointments</legend>
+          <p>Patients slated to see the Doctors Today! Use Department and Patient's No. controls to filter.</p>
+           <!-- BEGIN Record title_status_users_result1 -->
+<form id="title_status_users_result1" class="form-horizontal" method="" action="{Action}" name="{HTMLFormName}">
+   <!-- BEGIN Error -->  
+  <div class="f-row">
+    {Error}
+  </div>
+  <!-- END Error -->
+  <div class="row-fluid">
+  <div class="span5"
+  <div class="control-group">
+  <div class="f-row">
+    <label class="control-label" for="title_status_users_result1s_department_id">Department</label>
+    <div class="f-inputs controls">
+      <select name="{s_department_id_Name}" id="title_status_users_result1s_department_id">
+        <option value="">Select Department</option>
+ {s_department_id_Options}
+      </select>
+    </div>
+  </div></div>
+  <div class="span5">
+  <div class="f-row">
+    <label class="control-label" for="title_status_users_result1s_patient_id">Patient No.</label>
+    <div class="f-inputs controls">
+      <!-- BEGIN TextBox s_patient_id --><input type="text" name="{s_patient_id_Name}" placeholder="-Numbers Only Pls-" class="input-medium" value="{s_patient_id}" maxlength="10" size="10" id="title_status_users_result1s_patient_id" autocomplete="off"><!-- END TextBox s_patient_id -->
+    </div>
+  </div></div>
+ 
+  <div class="span2">
+  <div class="f-row f-actions">
+    <div class="f-inputs">
+      &nbsp; 
+      <!-- BEGIN Button Button_DoSearch --><button name="{Button_Name}" type="submit" value="Search" id="title_status_users_result1Button_DoSearch" class="btn">Search</button><!-- END Button Button_DoSearch -->
+    </div>
+  </div></div></div>
+</form>
+<!-- END Record title_status_users_result1 --><br>
+<!-- BEGIN Grid title_status_users_result -->
+<table class="table table-striped">
+  <tr>
+    <td colspan="6">Total Number of Patients:&nbsp;{title_status_users_result_TotalRecords}</td> 
+  </tr>
+ 
+  <tr>
+    <th>
+    <!-- BEGIN Sorter Sorter_appointment_time --><span class="Sorter"><a href="{Sort_URL}" id="title_status_users_resultSorter_appointment_time">Time</a> 
+    <!-- BEGIN Asc_On --><img src="../Styles/None/Images/Asc.gif"><!-- END Asc_On -->
+    <!-- BEGIN Desc_On --><img src="../Styles/None/Images/Desc.gif"><!-- END Desc_On --></span><!-- END Sorter Sorter_appointment_time --></th>
+ 
+    <th>
+    <!-- BEGIN Sorter Sorter_patient_patient_id --><span class="Sorter"><a href="{Sort_URL}" id="title_status_users_resultSorter_patient_patient_id">Patient No.</a> 
+    <!-- BEGIN Asc_On --><img src="../Styles/None/Images/Asc.gif"><!-- END Asc_On -->
+    <!-- BEGIN Desc_On --><img src="../Styles/None/Images/Desc.gif"><!-- END Desc_On --></span><!-- END Sorter Sorter_patient_patient_id --></th>
+ 
+    <th>
+    <!-- BEGIN Sorter Sorter_surname --><span class="Sorter"><a href="{Sort_URL}" id="title_status_users_resultSorter_surname">Names</a> 
+    <!-- BEGIN Asc_On --><img src="../Styles/None/Images/Asc.gif"><!-- END Asc_On -->
+    <!-- BEGIN Desc_On --><img src="../Styles/None/Images/Desc.gif"><!-- END Desc_On --></span><!-- END Sorter Sorter_surname --></th>
+ 
+    <th>
+    <!-- BEGIN Sorter Sorter_sex --><span class="Sorter"><a href="{Sort_URL}" id="title_status_users_resultSorter_sex">Sex</a> 
+    <!-- BEGIN Asc_On --><img src="../Styles/None/Images/Asc.gif"><!-- END Asc_On -->
+    <!-- BEGIN Desc_On --><img src="../Styles/None/Images/Desc.gif"><!-- END Desc_On --></span><!-- END Sorter Sorter_sex --></th>
+ 
+    <th>
+    <!-- BEGIN Sorter Sorter_first_name --><span class="Sorter"><a href="{Sort_URL}" id="title_status_users_resultSorter_first_name">Doctor</a> 
+    <!-- BEGIN Asc_On --><img src="../Styles/None/Images/Asc.gif"><!-- END Asc_On -->
+    <!-- BEGIN Desc_On --><img src="../Styles/None/Images/Desc.gif"><!-- END Desc_On --></span><!-- END Sorter Sorter_first_name --></th>
+ 
+    <th>
+    <!-- BEGIN Sorter Sorter_status --><span class="Sorter"><a href="{Sort_URL}" id="title_status_users_resultSorter_status">Status</a> 
+    <!-- BEGIN Asc_On --><img src="../Styles/None/Images/Asc.gif"><!-- END Asc_On -->
+    <!-- BEGIN Desc_On --><img src="../Styles/None/Images/Desc.gif"><!-- END Desc_On --></span><!-- END Sorter Sorter_status --></th>
+ 
+  </tr>
+ 
+  <!-- BEGIN Row -->
+  <tr>
+    <td>{appointment_time}&nbsp;</td> 
+    <td><a data-toggle="modal" href="{patient_patient_id_Src}" data-target="#myModal" id="title_status_users_resultpatient_patient_id_{title_status_users_result:rowNumber}" target="_blank">{patient_patient_id}</a>-{result_id}&nbsp;</td>    
+    <td>{surname}&nbsp;{other_names}</td>     
+    <td>{sex}&nbsp;</td> 
+    <td>{title}&nbsp;{first_name}&nbsp;{last_name}</td>   
+    <td><label class="label label-warning">{status}</label>&nbsp;</td> 
+  </tr>
+ <!-- END Row -->
+  <!-- BEGIN NoRecords -->
+  <tr>
+    <td colspan="6"><label class="label label-warning">SORRY No Patient Appointments!</label></td> 
+  </tr>
+ <!-- END NoRecords -->
+  <tr>
+    <td colspan="6">
+      <!-- BEGIN Navigator Navigator --><span class="Navigator">Records per page 
+      <select name="{FormName}PageSize" style="VERTICAL-ALIGN: middle;" onchange="CCChangeSize(this, '{FormName}')">
+        <option value="">-</option>
+ {PageSize_Options} 
+      </select>
+ 
+      <!-- BEGIN First_On --><a href="{First_URL}">First</a> <!-- END First_On -->
+      <!-- BEGIN First_Off -->First <!-- END First_Off -->
+      <!-- BEGIN Prev_On --><a href="{Prev_URL}">Prev</a> <!-- END Prev_On -->
+      <!-- BEGIN Prev_Off -->Prev <!-- END Prev_Off -->&nbsp; 
+      <!-- BEGIN Pages -->
+      <!-- BEGIN Page_On --><a href="{Page_URL}">{Page_Number}</a>&nbsp;<!-- END Page_On -->
+      <!-- BEGIN Page_Off -->{Page_Number}&nbsp;<!-- END Page_Off --><!-- END Pages -->of &nbsp;{Total_Pages}&nbsp; 
+      <!-- BEGIN Next_On --><a href="{Next_URL}">Next</a> <!-- END Next_On -->
+      <!-- BEGIN Next_Off -->Next <!-- END Next_Off -->
+      <!-- BEGIN Last_On --><a href="{Last_URL}">Last</a> <!-- END Last_On -->
+      <!-- BEGIN Last_Off -->Last <!-- END Last_Off --></span><!-- END Navigator Navigator -->&nbsp;</td> 
+  </tr>
+</table>
+<!-- END Grid title_status_users_result --><br>
+<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      <h3 id="myModalLabel">Complete Patient Card Information</h3>
+    </div>
+    <div class="modal-body">
+    
+    </div>
+    <div class="modal-footer">
+      <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    </div>
+  </div>
+
+        </div>
+ 
+      </div>
+ 
+    </div>
+ 
+  </div>
+</div>
+{footer}
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+<script type="text/javascript">
+	$('#popover').popover();
+	$('#accordion2').collapse();
+</script>
+</body>
+</html>

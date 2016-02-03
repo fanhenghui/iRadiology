@@ -1,0 +1,261 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>Schedule Test - iRadiology v1.0</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+<link rel="stylesheet" href="../css/bootstrap-responsive.css">
+<link rel="stylesheet" href="../css/iradiology.css">
+<script language="JavaScript" type="text/javascript">
+//Begin CCS script
+//Include Common JSFunctions @1-86BEACD2
+</script>
+<script language="JavaScript" src="../ClientI18N.php?file=Functions.js&amp;locale={res:CCS_LocaleID}" type="text/javascript" charset="utf-8"></script>
+<script language="JavaScript" src="../ClientI18N.php?file=DatePicker.js&amp;locale={res:CCS_LocaleID}" type="text/javascript" charset="utf-8"></script>
+<script language="JavaScript" type="text/javascript">
+//End Include Common JSFunctions
+
+//Include User Scripts @1-A8EC71EA
+</script>
+<script language="JavaScript" src="../js/yui/build/yahoo-dom-event/yahoo-dom-event.js" type="text/javascript"></script>
+<script language="JavaScript" src="../js/yui/build/calendar/calendar-min.js" type="text/javascript"></script>
+<script language="JavaScript" src="../js/yui/datepicker-commons.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="../Styles/None/ccs-yui-calendar.css">
+<script language="JavaScript" type="text/javascript">
+//End Include User Scripts
+
+//resultButton_Delete_OnClick @14-06F31CEB
+function resultButton_Delete_OnClick()
+{
+    var result = true;
+//End resultButton_Delete_OnClick
+
+//Confirmation Message @15-8243B274
+    return confirm('Delete record?');
+//End Confirmation Message
+
+//Close resultButton_Delete_OnClick @14-BC33A33A
+    return result;
+}
+//End Close resultButton_Delete_OnClick
+
+//resultButton_Cancel_OnClick @16-F1334BDF
+function resultButton_Cancel_OnClick()
+{
+    disableValidation = true;
+    return true;
+}
+//End resultButton_Cancel_OnClick
+
+//Handle resultl_m_pInlineDatePicker1 @20-7CA4CD52
+function resultl_m_pInlineDatePicker1_start(sender) {
+    if (!sender || sender === window) return;
+    generateDatePicker(sender.id, "dd/mm/yyyy","None");
+}
+//End Handle resultl_m_pInlineDatePicker1
+
+//Handle resultdateInlineDatePicker2 @27-949968E9
+function resultdateInlineDatePicker2_start(sender) {
+    if (!sender || sender === window) return;
+    generateDatePicker(sender.id, "dd/mm/yyyy","None");
+}
+//End Handle resultdateInlineDatePicker2
+
+//bind_events @1-2EFFB547
+function bind_events() {
+    try { footer_bind_events(); } catch(e) {}
+    try { header_receptionist_st_bind_events(); } catch(e) {}
+    addEventHandler("resultl_m_p", "load", resultl_m_pInlineDatePicker1_start);
+    addEventHandler("resultdate", "load", resultdateInlineDatePicker2_start);
+    addEventHandler("resultButton_Delete", "click", resultButton_Delete_OnClick);
+    addEventHandler("resultButton_Cancel", "click", resultButton_Cancel_OnClick);
+}
+//End bind_events
+
+window.onload = bind_events; //Assign bind_events @1-19F7B649
+
+//End CCS script
+</script>
+</head>
+<body>
+{header_receptionist_st}
+<div class="navbar">
+  <div class="navbar-inner">
+    <ul class="nav">
+      <li><a>&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+ 
+      <li><a><strong>&nbsp;&nbsp;&nbsp;Designation: </strong>{Label1}</a></li>
+ 
+      <li><a>&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+ 
+      <li><a>&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+ 
+      <li><a>&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+ 
+      <li><a>&nbsp;&nbsp;</a></li>
+ 
+      <li><a>&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+ 
+      <li><a>&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+ 
+      <li><a>&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+ 
+      <li><a>&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+ 
+      <li class="dropdown"><a class="dropdown-toggle" id="dropdown2" data-toggle="dropdown">&nbsp;&nbsp;<span class="icon-user"></span>  {Label2}<b class="caret"></b></a>
+ 		<ul class="dropdown-menu" role="menu" aria-labelledby="dropdown2">
+ 			<li role="presentation"><a href="../login/change_pwd.php" role="menuitem" tabindex="-1">Change Password</a></li>
+ 		</ul>
+ 	  </li>
+ 
+    </ul>
+ 
+  </div>
+</div>
+<div style="margin-left:5px; margin-right:5px;">
+  <h2>Complete Radiology Request Information</h3>
+ 
+  <hr>
+  <!-- BEGIN Record result -->
+  <form id="result" method="post" class="form-horizontal" action="{Action}" name="{HTMLFormName}">
+    <!-- BEGIN Error -->
+    <div class="f-row">
+      <label>{Error}</label> 
+    </div>
+ <!-- END Error -->
+    <div class="row">
+      <div class="f-row control-group">
+        <div class="span6">
+          <label class="control-label" for="resultconsultant_i_c">Consultant i/c</label> 
+          <div class="f-inputs controls">
+            <input type="text" placeholder="Consultant's Name" name="{consultant_i_c_Name}" value="{consultant_i_c}" maxlength="45" size="45" id="resultconsultant_i_c">
+          </div>
+ 
+        </div>
+ 
+        <div class="span6">
+          <label class="control-label" for="resultl_m_p">L.M.P.</label> 
+          <div class="f-inputs controls">
+            <input type="text" placeholder="Select l.m.p from drop-down" name="{l_m_p_Name}" value="{l_m_p}" maxlength="100" size="21" id="resultl_m_p">
+          </div>
+ 
+        </div>
+ 
+      </div>
+ 
+    </div>
+ 
+    <div class="row">
+      <div class="f-row control-group">
+        <div class="span6">
+          <label class="control-label" for="resultclinic_id">Clinic</label> 
+          <div class="f-inputs controls">
+            <select name="{clinic_id_Name}" id="resultclinic_id">
+              <option value="">Select Value</option>
+ {clinic_id_Options} 
+            </select>
+ 
+          </div>
+ 
+        </div>
+ 
+        <div class="span6">
+          <label class="control-label" for="resultamount_to_pay">Amount</label> 
+          <div class="f-inputs controls">
+            <input type="text" placeholder="Enter Amount -Numbers Only-" name="{amount_to_pay_Name}" value="{amount_to_pay}" maxlength="12" size="12" id="resultamount_to_pay">
+          </div>
+ 
+        </div>
+ 
+      </div>
+ 
+    </div>
+ 
+    <div class="row">
+      <div class="f-row control-group">
+        <div class="span6">
+          <label class="control-label" for="resultprimary_diagnosis">Provisional Diagnosis</label> 
+          <div class="f-inputs controls">
+            <textarea name="{primary_diagnosis_Name}" placeholder="Enter details of Primary Diagnosis" cols="50" rows="3" id="resultprimary_diagnosis">{primary_diagnosis}</textarea>
+          </div>
+ 
+        </div>
+ 
+        <div class="span6">
+          <label class="control-label" for="resultclinical_notes">Clinical Notes</label> 
+          <div class="f-inputs controls">
+            <textarea name="{clinical_notes_Name}" placeholder="Enter Clinical Notes" cols="50" rows="3" id="resultclinical_notes">{clinical_notes}</textarea>
+          </div>
+ 
+        </div>
+ 
+      </div>
+ 
+    </div>
+ 
+    <div class="row">
+      <div class="f-row control-group">
+        <div class="span6">
+          <label class="control-label" for="resultdepartment_id">Department</label> 
+          <div class="f-inputs controls">
+            <select name="{department_id_Name}" id="resultdepartment_id">
+              <option value="">Select Value</option>
+ {department_id_Options} 
+            </select>
+ 
+          </div>
+ 
+        </div>
+ 
+        <div class="span6">
+          <label class="control-label" for="resultdate">Date</label> 
+          <div class="f-inputs controls">
+            <input type="text" placeholder="Select Date from Drop-down" name="{date_Name}" value="{date}" maxlength="100" size="21" id="resultdate">
+          </div>
+ 
+        </div>
+ 
+      </div>
+ 
+    </div>
+ 
+    <div class="row">
+      <div class="f-row control-group">
+        <div class="span6">
+          <label class="control-label" for="resultsup_dept_id">Sub-Dept.</label> 
+          <div class="f-inputs controls">
+            <select name="{sup_dept_id_Name}" id="resultsup_dept_id">
+              <option value="">Select Value</option>
+ {sup_dept_id_Options} 
+            </select>
+ <input type="hidden" name="{patient_id_Name}" value="{patient_id}" id="resultpatient_id"><input type="hidden" name="{status_id_Name}" value="{status_id}" id="resultstatus_id">
+          </div>
+ 
+        </div>
+ 
+      </div>
+ 
+    </div>
+ 
+    <div class="f-row f-actions pull-right">
+      <div class="f-inputs">
+        <!-- BEGIN Button Button_Insert --><button name="{Button_Name}" type="submit" value="Add" id="resultButton_Insert" class="btn btn-primary">Continue</button><!-- END Button Button_Insert -->
+        <!-- BEGIN Button Button_Update --><button name="{Button_Name}" type="submit" value="Submit" id="resultButton_Update" class="btn">Update</button><!-- END Button Button_Update -->
+        <!-- BEGIN Button Button_Delete --><button name="{Button_Name}" type="submit" value="Delete" id="resultButton_Delete" class="btn">Delete</button><!-- END Button Button_Delete -->
+        <!-- BEGIN Button Button_Cancel --><button name="{Button_Name}" type="submit" value="Cancel" id="resultButton_Cancel" class="btn">Cancel</button><!-- END Button Button_Cancel -->
+      </div>
+ 
+    </div>
+ 
+  </form>
+ <!-- END Record result --><br>
+</div>
+{footer}
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+<script type="text/javascript">
+	$('#popover').popover();
+</script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>Setup Patient Occupation - iRadiology v1.0</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+<link rel="stylesheet" href="../css/bootstrap-responsive.css">
+<link rel="stylesheet" href="../css/iradiology.css">
+<script language="JavaScript" type="text/javascript">
+//Begin CCS script
+//Include Common JSFunctions @1-9722A627
+</script>
+<script language="JavaScript" src="../ClientI18N.php?file=Functions.js&amp;locale={res:CCS_LocaleID}" type="text/javascript" charset="utf-8"></script>
+<script language="JavaScript" type="text/javascript">
+//End Include Common JSFunctions
+
+//bind_events @1-A1581033
+function bind_events() {
+    try { footer_bind_events(); } catch(e) {}
+    try { header_receptionist_setup_bind_events(); } catch(e) {}
+    try { occupation_bind_events(); } catch(e) {}
+    try { sub_dept_bind_events(); } catch(e) {}
+    try { ward_clinic_bind_events(); } catch(e) {}
+}
+//End bind_events
+
+window.onload = bind_events; //Assign bind_events @1-19F7B649
+
+//End CCS script
+</script>
+</head>
+<body>
+{header_receptionist_setup}
+<div class="navbar">
+  <div class="navbar-inner">
+    <ul class="nav">
+      <li><a>&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+ 
+      <li><a><strong>&nbsp;&nbsp;&nbsp;Designation: </strong>{Label1}</a></li>
+ 
+      <li><a>&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+ 
+      <li><a>&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+ 
+      <li><a>&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+ 
+      <li><a>&nbsp;&nbsp;</a></li>
+ 
+      <li><a>&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+ 
+      <li><a>&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+ 
+      <li><a>&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+ 
+      <li><a>&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+ 
+      <li><a href="#">&nbsp;&nbsp;<span class="icon-user"></span> {Label2}</a></li>
+ 
+    </ul>
+ 
+  </div>
+</div>
+<div style="margin-left:5px; margin-right:5px">
+  {sub_dept}{occupation}{ward_clinic}
+</div>
+{footer}
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+<script type="text/javascript">
+	$('#popover').popover();
+</script>
+</body>
+</html>

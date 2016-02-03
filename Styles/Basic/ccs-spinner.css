@@ -1,0 +1,78 @@
+input{
+	margin:0;
+	padding:0;
+}
+
+.x-form-field-wrap{
+	position:relative;
+	zoom:1;
+	white-space:nowrap;
+}
+
+.ext-strict .x-form-text{
+	height:18px;
+}
+
+.x-form-text{
+	padding:1px 3px;
+	border:1px solid #B5B8C8;
+}
+
+.x-form-trigger{
+	width:17px;
+	height:21px;
+	border:0;
+	cursor:pointer;
+	border-bottom:1px solid #B5B8C8;
+	position:absolute;
+	top:0;
+}
+
+.x-form-field-wrap .x-form-spinner-trigger {
+    background:transparent url(Images/extjs/spinner/spinner.gif) no-repeat 0 0;
+}
+
+.x-form-field-wrap .x-form-spinner-overup{
+    background-position:-17px 0;
+}
+.x-form-field-wrap .x-form-spinner-clickup{
+    background-position:-34px 0;
+}
+.x-form-field-wrap .x-form-spinner-overdown{
+    background-position:-51px 0;
+}
+.x-form-field-wrap .x-form-spinner-clickdown{
+    background-position:-68px 0;
+}
+
+
+.x-trigger-wrap-focus .x-form-spinner-trigger{
+    background-position:-85px 0;
+}
+.x-trigger-wrap-focus .x-form-spinner-overup{
+    background-position:-102px 0;
+}
+.x-trigger-wrap-focus .x-form-spinner-clickup{
+    background-position:-119px 0;
+}
+.x-trigger-wrap-focus .x-form-spinner-overdown{
+    background-position:-136px 0;
+}
+.x-trigger-wrap-focus .x-form-spinner-clickdown{
+    background-position:-153px 0;
+}
+.x-trigger-wrap-focus .x-form-trigger{
+    border-bottom: 1px solid #7eadd9;
+}
+
+.x-form-field-wrap .x-form-spinner-splitter {
+	line-height:1px;
+	font-size:1px;
+    background:transparent url(spinner-split.gif) no-repeat 0 0;
+	position:absolute;
+	cursor: n-resize;
+	overflow: hidden;
+}
+.x-trigger-wrap-focus .x-form-spinner-splitter{
+    background-position:-14px 0;
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>Access Denied - iRadiology v1.0</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/bootstrap-responsive.css">
+<link rel="stylesheet" href="css/iradiology.css">
+</head>
+<body>
+{header_access_denied}
+<div style="margin-left:5px; margin-right:5px;">
+  <div class="page-header">
+    <h1>Access Denied!<small> &nbsp;::{Label1}:: </small></h1>
+ 
+  </div>
+ 
+  <div class="form-signin">
+    <div class="media">
+<a href="#" class="pull-left"><img class="media-object" src="img/cancel.png" data-src="holder.js/128x128"></a> 
+      <div class="media-body">
+        <p>Oups! You are NOT ALLOWED Access to this page for the above stated reason.</p>
+ 
+        <p>Click Login Button below to enter the right security details to continue.</p>
+ 
+        <p>Thank You!</p>
+ 
+      </div>
+ 
+    </div><br>
+ 
+    <!-- BEGIN Record NewRecord1 -->
+    <form id="NewRecord1" method="post" action="{Action}" name="{HTMLFormName}">
+        <!-- BEGIN Error -->
+        <div>{Error}</div>         
+ <!-- END Error -->         
+          <div>
+            <!-- BEGIN Button Button_Insert --><button name="{Button_Name}" type="submit" value="Add" id="NewRecord1Button_Insert" class="btn btn-large btn-block btn-success">Go To Login Page</button><!-- END Button Button_Insert -->
+          </div> 
+    </form>
+    <!-- END Record NewRecord1 -->
+    
+  </div>
+</div>
+{footer}
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script src="js/holder/holder.js"></script>
+<script type="text/javascript">
+	$('#popover').popover();
+</script>
+</body>
+</html>

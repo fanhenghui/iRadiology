@@ -1,0 +1,96 @@
+<script language="JavaScript" type="text/javascript">
+//Begin CCS script
+//Include Common JSFunctions @1-A2F3288E
+</script>
+<script language="JavaScript" src="{page:pathToRoot}ClientI18N.php?file=Functions.js&amp;locale={res:CCS_LocaleID}" type="text/javascript" charset="utf-8"></script>
+<script language="JavaScript" type="text/javascript">
+//End Include Common JSFunctions
+
+//statistical_conclusionstatistical_conclusion1Button_Submit_OnClick @9-B2ECD2AA
+function statistical_conclusionstatistical_conclusion1Button_Submit_OnClick()
+{
+    var result = true;
+//End statistical_conclusionstatistical_conclusion1Button_Submit_OnClick
+
+//Confirmation Message @10-257FDD03
+    return confirm('Submit records?');
+//End Confirmation Message
+
+//Close statistical_conclusionstatistical_conclusion1Button_Submit_OnClick @9-BC33A33A
+    return result;
+}
+//End Close statistical_conclusionstatistical_conclusion1Button_Submit_OnClick
+
+//statistical_conclusionstatistical_conclusion1Cancel_OnClick @11-6004E1B4
+function statistical_conclusionstatistical_conclusion1Cancel_OnClick()
+{
+    disableValidation = true;
+    return true;
+}
+//End statistical_conclusionstatistical_conclusion1Cancel_OnClick
+
+//bind_events @1-1C4E71FA
+function statistical_conclusion_bind_events() {
+    addEventHandler("statistical_conclusionstatistical_conclusion1Button_Submit", "click", statistical_conclusionstatistical_conclusion1Button_Submit_OnClick);
+    addEventHandler("statistical_conclusionstatistical_conclusion1Cancel", "click", statistical_conclusionstatistical_conclusion1Cancel_OnClick);
+}
+//End bind_events
+
+//End CCS script
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="{page:pathToRoot}css/bootstrap.css">
+<link rel="stylesheet" href="{page:pathToRoot}css/bootstrap-responsive.css">
+<link rel="stylesheet" href="{page:pathToRoot}css/iradiology.css">
+<!-- BEGIN EditableGrid statistical_conclusion1 -->
+<form id="statistical_conclusionstatistical_conclusion1" name="{HTMLFormName}" action="{Action}" method="post">
+  <input type="hidden" name="FormState" value="{FormState}">{FormScript} 
+  <legend>Add/Edit Statistical Conclusion </legend>
+ 
+  <table class="table table-striped table-condensed">
+    <!-- BEGIN Error -->
+    <tr>
+      <td colspan="3">{Error}</td> 
+    </tr>
+ <!-- END Error -->
+    <tr>
+      <th>Statistical Conclusion ID</th>
+ 
+      <th>Statistical Conclusion</th>
+ 
+      <th>Delete?</th>
+ 
+    </tr>
+ 
+    <!-- BEGIN Row -->
+    <!-- BEGIN RowError -->
+    <tr>
+      <td colspan="3">{Error}</td> 
+    </tr>
+ <!-- END RowError -->
+    <tr>
+      <td>{statistical_conclusion_id}&nbsp;</td> 
+      <td><input type="text" name="{statistical_conclusion_Name}" value="{statistical_conclusion}" maxlength="250" size="50" id="statistical_conclusionstatistical_conclusion1statistical_conclusion_{statistical_conclusionstatistical_conclusion1:rowNumber}">&nbsp;</td> 
+      <td>
+        <!-- BEGIN CheckBox CheckBox_Delete --><input type="checkbox" name="{CheckBox_Delete_Name}" value="1" {CheckBox_Delete} id="statistical_conclusionstatistical_conclusion1CheckBox_Delete_{statistical_conclusionstatistical_conclusion1:rowNumber}"><!-- END CheckBox CheckBox_Delete -->&nbsp;</td> 
+    </tr>
+ <!-- END Row -->
+    <!-- BEGIN NoRecords -->
+    <tr>
+      <td colspan="3">No records of Statistical Conclusion</td> 
+    </tr>
+ <!-- END NoRecords -->
+    <tr>
+      <td style="text-align:right;" colspan="3">
+        <!-- BEGIN Button Button_Submit --><button name="{Button_Name}" type="submit" value="Submit" id="statistical_conclusionstatistical_conclusion1Button_Submit" class="btn btn-primary">Submit</button><!-- END Button Button_Submit -->
+        <!-- BEGIN Button Cancel --><button name="{Button_Name}" type="submit" value="Cancel" id="statistical_conclusionstatistical_conclusion1Cancel" class="btn">Cancel</button><!-- END Button Cancel --></td> 
+    </tr>
+ 
+  </table>
+</form>
+<!-- END EditableGrid statistical_conclusion1 --><br>
+<script type="text/javascript" src="{page:pathToRoot}js/jquery.js"></script>
+<script type="text/javascript" src="{page:pathToRoot}js/bootstrap.min.js"></script>
+<script type="text/javascript">
+	$('#popover').popover();
+</script>

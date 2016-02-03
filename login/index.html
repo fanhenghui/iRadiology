@@ -1,0 +1,222 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>Login - iRadiology v1.0</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+<link rel="stylesheet" href="../css/bootstrap-responsive.css">
+<link rel="stylesheet" href="../css/iradiology.css">
+<script language="JavaScript" type="text/javascript">
+//Begin CCS script
+//Include Common JSFunctions @1-9722A627
+</script>
+<script language="JavaScript" src="../ClientI18N.php?file=Functions.js&amp;locale={res:CCS_LocaleID}" type="text/javascript" charset="utf-8"></script>
+<script language="JavaScript" type="text/javascript">
+//End Include Common JSFunctions
+
+//_OnLoad @1-9C4F01C0
+function _OnLoad()
+{
+    var result = true;
+//End _OnLoad
+
+//Set Focus @11-BFDACC34
+    if (document.forms["Login"] && document.forms["Login"].login)
+        try{document.forms["Login"].login.focus();}catch(e){}
+//End Set Focus
+
+//Close _OnLoad @1-BC33A33A
+    return result;
+}
+//End Close _OnLoad
+
+//usersButton1_OnClick @36-AE4E455F
+function usersButton1_OnClick()
+{
+    disableValidation = true;
+    return true;
+}
+//End usersButton1_OnClick
+
+//bind_events @1-51466FF6
+function bind_events() {
+    try { footer_bind_events(); } catch(e) {}
+    try { header_login_bind_events(); } catch(e) {}
+    addEventHandler("", "load", _OnLoad);
+    addEventHandler("usersButton1", "click", usersButton1_OnClick);
+}
+//End bind_events
+
+window.onload = bind_events; //Assign bind_events @1-19F7B649
+
+//End CCS script
+</script>
+</head>
+<body>
+{header_login}
+<!-- BEGIN Record Login -->
+<form id="Login" method="post" class="form-horizontal form-signin" action="{Action}" name="{HTMLFormName}">
+  <fieldset>
+  <legend>Login</legend>
+ 
+  <!-- BEGIN Error -->
+  <div class="alert alert-error">
+ 	<button type="button" class="close" data-dismiss="alert">&times;</button>
+    {Error} 
+  </div>
+ <!-- END Error -->
+  <div class="control-group">
+    <label class="control-label" for="Loginlogin1">Username</label> 
+    <div class="controls">
+      <input type="text" class="input-large1" name="{login1_Name}" value="{login1}" placeholder="login" maxlength="100" size="20" id="Loginlogin1">
+    </div>
+ 
+  </div>
+ 
+  <div class="control-group">
+    <label class="control-label" for="Loginpassword">Password</label> 
+    <div class="controls">
+      <input type="password" class="input-medium" name="{password_Name}" value="{password}" placeholder="password" maxlength="100" size="20" id="Loginpassword">
+      <!-- BEGIN Button Button_DoLogin --><button name="{Button_Name}" type="submit" value="Login" id="LoginButton_DoLogin" class="btn">Login</button><!-- END Button Button_DoLogin -->
+    </div>
+ 
+  </div>
+ 
+  <div class="control-group">
+    <div class="controls">
+      <label class="checkbox"><input type="checkbox" name="{autoLogin_Name}" value="1" {autoLogin} id="LoginautoLogin">Remember me <a href="{Link1_Src}" style="COLOR: silver" id="LoginLink1">Forgot Password?</a> </label> 
+    </div>
+ </fieldset> 
+  </form>
+ <!-- END Record Login -->
+  <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button> 
+      <h3 id="myModalLabel">Create an iRadiology Account</h3>
+ 
+    </div>
+ 
+    <div class="modal-body">
+      <span class="badge badge-info">All fields marked in * are composary. Also Admin activation required for this account type.</span> 
+      <!-- BEGIN Record users -->
+      <form id="users" method="post" action="{Action}" name="{HTMLFormName}">
+        <!-- BEGIN Error -->
+        <div class="f-row">
+          <label class="label label-warning">{Error}</label> 
+        </div>
+ <!-- END Error -->
+        <div class="row-fluid">
+          <div class="span6">
+            <div class="f-row control-group">
+              <label class="control-label" for="userstitle_id">Title*</label> 
+              <div class="f-inputs controls">
+                <select name="{title_id_Name}" id="userstitle_id">
+                  <option value="">Select Title</option>
+ {title_id_Options} 
+                </select>
+ <input type="hidden" name="{user_id_Name}" value="{user_id}" id="usersuser_id">
+              </div>
+ 
+            </div>
+ 
+          </div>
+ 
+          <div class="span6">
+            <div class="f-row control-group">
+              <label class="control-label" for="userslast_name">Last Name*</label> 
+              <div class="f-inputs controls">
+                <input type="text" name="{last_name_Name}" placeholder="Enter Surname" value="{last_name}" maxlength="45" size="45" id="userslast_name">
+              </div>
+ 
+            </div>
+ 
+          </div>
+ 
+        </div>
+ 
+        <div class="row-fluid">
+          <div class="span6">
+            <div class="f-row control-group">
+              <label class="control-label" for="usersfirst_name">First Name*</label> 
+              <div class="f-inputs controls">
+                <input type="text" name="{first_name_Name}" placeholder="Enter First Name" value="{first_name}" maxlength="45" size="45" id="usersfirst_name">
+              </div>
+ 
+            </div>
+ 
+          </div>
+ 
+          <div class="span6">
+            <div class="f-row control-group">
+              <label class="control-label" for="usersmiddle_name">Middle Name</label> 
+              <div class="f-inputs controls">
+                <input type="text" name="{middle_name_Name}" placeholder="Enter Middle Names/Initials" value="{middle_name}" maxlength="45" size="45" id="usersmiddle_name"><input type="hidden" name="{Hidden1_Name}" value="{Hidden1}" id="usersHidden1">
+              </div>
+ 
+            </div>
+ 
+          </div>
+ 
+        </div>
+ 
+        <div class="row-fluid">
+          <div class="span6">
+            <div class="f-row control-group">
+              <label class="control-label" for="usersgroup_id">Designation*</label> 
+              <div class="f-inputs controls">
+                <select name="{group_id_Name}" id="usersgroup_id">
+                  <option value="">Select Designation</option>
+ {group_id_Options} 
+                </select>
+ 
+              </div>
+ 
+            </div>
+ 
+          </div>
+ 
+          <div class="span6">
+            <div class="f-row control-group">
+              <label class="control-label" for="usersdepartment_id">Department</label> 
+              <div class="f-inputs controls">
+                <select name="{department_id_Name}" id="usersdepartment_id">
+                  <option value="">Select Department(Doctors)</option>
+ {department_id_Options} 
+                </select>
+ 
+              </div>
+ 
+            </div>
+ 
+          </div>
+ 
+        </div>
+ 
+        <div class="modal-footer">
+          <div class="f-row f-actions">
+            <div class="f-inputs pull-right">
+              <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button> 
+              <!-- BEGIN Button Button1 --><button name="{Button_Name}" type="submit" value="Button1" id="usersButton1" class="btn">Clear</button><!-- END Button Button1 -->
+              <!-- BEGIN Button Button_Insert --><button name="{Button_Name}" type="submit" value="Add" id="usersButton_Insert" class="btn btn-primary">Continue</button><!-- END Button Button_Insert -->
+              <!-- BEGIN Button Button_Update --><button name="{Button_Name}" type="submit" value="Submit" id="usersButton_Update" class="btn btn-primary">Update Record</button><!-- END Button Button_Update -->
+            </div>
+ 
+          </div>
+ 
+        </div>
+ 
+      </form>
+ <!-- END Record users -->
+    </div>
+ 
+  </div>
+ {footer} 
+  <script type="text/javascript" src="../js/jquery.js"></script>
+  <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+	$('#popover').popover();
+</script>
+  </body>
+ 
+  </html>

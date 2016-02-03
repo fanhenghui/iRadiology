@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>Print Radiology Report</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/bootstrap-responsive.css">
+<link rel="stylesheet" href="css/iradiology_report_pg.css">
+</head>
+<body>
+{header_print_report}
+<div class="form-signin">
+  <img id="Image1" width="" height="" name="Image1" src="img/test2.fw.png" alt="ABUTH"><br>
+  <div class="pull-right">
+    <label class="label"><i>{patID}-{resultID}-{startDate}-{deptShort}</i></label> 
+  </div>
+ <br>
+  <br>
+  <br>
+  <!-- BEGIN Grid title_users_sub_dept_sex -->
+  <table class="table">
+    <!-- BEGIN Row -->
+    <tr>
+      <th>Surname</th>
+ 
+      <td>{surname}&nbsp;</td> 
+      <th>Other Names</th>
+ 
+      <td>{other_names}&nbsp;</td> 
+    </tr>
+ 
+    <tr>
+      <th>Age</th>
+ 
+      <td>{age}&nbsp;</td> 
+      <th>Sex</th>
+ 
+      <td>{sex}&nbsp;</td> 
+    </tr>
+ 
+    <tr>
+      <th>Hospital No</th>
+ 
+      <td>{hospital_no}&nbsp;</td> 
+      <th>Ward/Clinic</th>
+ 
+      <td>{clinic}&nbsp;</td> 
+    </tr>
+ 
+    <tr>
+      <td colspan="4"><u>{sub_dept}</u>&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp; {todaysDate}<br>
+        <br>
+        {result}</td> 
+    </tr>
+ 
+    <tr>
+      <th>Conclusion</th>
+ 
+      <td colspan="3">{conclusion}&nbsp;</td> 
+    </tr>
+ 
+    <tr>
+      <td colspan="4"><br>
+        <br>
+        <u>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</u><br>
+        &emsp;{title} &nbsp;{first_name}&nbsp;{last_name}</td> 
+    </tr>
+ <!-- END Row -->
+    <!-- BEGIN NoRecords -->
+    <tr>
+      <td colspan="4">Report Information incorrect!</td> 
+    </tr>
+ <!-- END NoRecords -->
+  </table>
+ <!-- END Grid title_users_sub_dept_sex -->
+  <div class="pull-right">
+    <code>Printed by: {Label1}</code>
+  </div>
+</div>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript">
+	$('#popover').popover();
+</script>
+</body>
+</html>

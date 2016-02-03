@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>Admin Report & Statistics - iRadiology v1.0</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+<link rel="stylesheet" href="../css/bootstrap-responsive.css">
+<link rel="stylesheet" href="../css/iradiology.css">
+</head>
+<body>
+{header_admin_report}
+<div class="navbar">
+  <div class="navbar-inner">
+    <ul class="nav">
+      <li><a>&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+ 
+      <li><a><strong>&nbsp;&nbsp;&nbsp;Designation: </strong>{Label1}</a></li>
+ 
+      <li><a>&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+ 
+      <li><a>&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+ 
+      <li><a>&nbsp;&nbsp;&nbsp;&nbsp;</a></li>      
+ 
+      <li><a>&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+ 
+      <li><a>&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+ 
+      <li><a>&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+ 
+      <li><a>&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+ 
+      <li class="dropdown"><a class="dropdown-toggle" id="dropdown2" data-toggle="dropdown">&nbsp;&nbsp;<span class="icon-user"></span> {Label2}<b class="caret"></b></a>
+ 		<ul class="dropdown-menu" role="menu" aria-labelledby="dropdown2">
+ 			<li role="presentation"><a href="../login/change_pwd.php" role="menuitem" tabindex="-1">Change Password</a></li>
+ 		</ul>
+ 	  </li>
+ 
+    </ul>
+ 
+  </div>
+</div>
+<div style="margin-left:5px; margin-right:5px">
+	<div class="page-header">
+		<h2>Reports <small>Standard Charts</small></h2>	
+	</div>
+	<p>iRadiology v1.0 is designed to generate standard chart diagrams based on specified inputs. The reporting capabilities are limitless and is perhaps one of 
+	the strongest feature of this application.</p>
+	<p>Custom reports and charts can be generated upon request as much as needed for research, educational, statistical purposes etc. These reports would then be part of subsequent versions of this software. </p>
+	<legend>:: based on Radiology Report ::</legend>
+</div>
+{footer}
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+<script type="text/javascript">
+	$('#popover').popover();
+</script>
+</body>
+</html>

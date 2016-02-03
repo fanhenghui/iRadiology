@@ -1,0 +1,96 @@
+<script language="JavaScript" type="text/javascript">
+//Begin CCS script
+//Include Common JSFunctions @1-A2F3288E
+</script>
+<script language="JavaScript" src="{page:pathToRoot}ClientI18N.php?file=Functions.js&amp;locale={res:CCS_LocaleID}" type="text/javascript" charset="utf-8"></script>
+<script language="JavaScript" type="text/javascript">
+//End Include Common JSFunctions
+
+//ward_clinicclinicButton_Submit_OnClick @9-807D9A34
+function ward_clinicclinicButton_Submit_OnClick()
+{
+    var result = true;
+//End ward_clinicclinicButton_Submit_OnClick
+
+//Confirmation Message @10-257FDD03
+    return confirm('Submit records?');
+//End Confirmation Message
+
+//Close ward_clinicclinicButton_Submit_OnClick @9-BC33A33A
+    return result;
+}
+//End Close ward_clinicclinicButton_Submit_OnClick
+
+//ward_clinicclinicCancel_OnClick @11-CC7FD356
+function ward_clinicclinicCancel_OnClick()
+{
+    disableValidation = true;
+    return true;
+}
+//End ward_clinicclinicCancel_OnClick
+
+//bind_events @1-DC7884EC
+function ward_clinic_bind_events() {
+    addEventHandler("ward_clinicclinicButton_Submit", "click", ward_clinicclinicButton_Submit_OnClick);
+    addEventHandler("ward_clinicclinicCancel", "click", ward_clinicclinicCancel_OnClick);
+}
+//End bind_events
+
+//End CCS script
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="{page:pathToRoot}css/bootstrap.css">
+<link rel="stylesheet" href="{page:pathToRoot}css/bootstrap-responsive.css">
+<link rel="stylesheet" href="{page:pathToRoot}css/iradiology.css">
+<!-- BEGIN EditableGrid clinic -->
+<form id="ward_clinicclinic" name="{HTMLFormName}" action="{Action}" method="post">
+  <input type="hidden" name="FormState" value="{FormState}">{FormScript} 
+  <legend>Add/Edit Clinic </legend>
+ 
+  <table class="table table-striped table-condensed">
+    <!-- BEGIN Error -->
+    <tr>
+      <td colspan="3">{Error}</td> 
+    </tr>
+ <!-- END Error -->
+    <tr>
+      <th>Clinic ID</th>
+ 
+      <th>Clinic</th>
+ 
+      <th>Delete?</th>
+ 
+    </tr>
+ 
+    <!-- BEGIN Row -->
+    <!-- BEGIN RowError -->
+    <tr>
+      <td colspan="3">{Error}</td> 
+    </tr>
+ <!-- END RowError -->
+    <tr>
+      <td>{clinic_id}</td> 
+      <td><input type="text" name="{clinic1_Name}" value="{clinic1}" maxlength="45" size="45" id="ward_clinicclinicclinic1_{ward_clinicclinic:rowNumber}"></td> 
+      <td>
+        <!-- BEGIN CheckBox CheckBox_Delete --><input type="checkbox" name="{CheckBox_Delete_Name}" value="1" {CheckBox_Delete} id="ward_clinicclinicCheckBox_Delete_{ward_clinicclinic:rowNumber}"><!-- END CheckBox CheckBox_Delete -->&nbsp;</td> 
+    </tr>
+ <!-- END Row -->
+    <!-- BEGIN NoRecords -->
+    <tr>
+      <td colspan="3">No records of Clinics/Wards</td> 
+    </tr>
+ <!-- END NoRecords -->
+    <tr>
+      <td style="text-align:right;" colspan="3">
+        <!-- BEGIN Button Button_Submit --><button name="{Button_Name}" type="submit" value="Submit" id="ward_clinicclinicButton_Submit" class="btn btn-primary">Submit</button><!-- END Button Button_Submit -->
+        <!-- BEGIN Button Cancel --><button name="{Button_Name}" type="submit" value="Cancel" id="ward_clinicclinicCancel" class="btn">Cancel</button><!-- END Button Cancel --></td> 
+    </tr>
+ 
+  </table>
+</form>
+<!-- END EditableGrid clinic --><br>
+<script type="text/javascript" src="{page:pathToRoot}js/jquery.js"></script>
+<script type="text/javascript" src="{page:pathToRoot}js/bootstrap.min.js"></script>
+<script type="text/javascript">
+	$('#popover').popover();
+</script>

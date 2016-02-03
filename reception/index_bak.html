@@ -1,0 +1,224 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>Receptionist Home - iRadiology v1.0</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+<link rel="stylesheet" href="../css/bootstrap-responsive.css">
+<link rel="stylesheet" href="../css/iradiology.css">
+</head>
+<body>
+{header_receptionist}
+<div class="navbar">
+  <div class="navbar-inner">
+    <ul class="nav">
+      <li><a>&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+ 
+      <li><a><strong>&nbsp;&nbsp;&nbsp;Designation: </strong>{Label1}</a></li>
+ 
+      <li><a>&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+ 
+      <li><a>&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+ 
+      <li><a>&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+ 
+      <li><a>&nbsp;&nbsp;</a></li>
+ 
+      <li><a>&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+ 
+      <li><a>&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+ 
+      <li><a>&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+ 
+      <li><a>&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+ 
+      <li><a href="#">&nbsp;&nbsp;<span class="icon-user"></span> {Label2}</a></li>
+ 
+    </ul>
+ 
+  </div>
+</div>
+<div style="margin-left:5px; margin-right:5px">
+  <h2>How I can help today</h2>
+ 
+  <hr>
+  <div class="accordion" id="accordion2">
+    <div class="accordion-group">
+      <div class="accordion-heading">
+<a href="#collapseOne" class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2"><strong>Search Patients</strong> </a> 
+      </div>
+ 
+      <div id="collapseOne" class="accordion-body collapse in">
+        <div class="accordion-inner">
+          <!-- BEGIN Record sex_occupation_patient1 -->
+          <form id="sex_occupation_patient1" method="post" action="{Action}" class="form-search" name="{HTMLFormName}">
+            <p>Search patient using either their <strong>Surname, Other Names </strong>or<strong>Hospital Number</strong>. Click <i>'Proceed'</i> to complete radiology request information and schedule he/her for a doctor's appointment. OR click the patient id to adjust some personal informations about the patient.</p>
+ 
+            <p>Click <i>'Add New'</i> to register a new patient in the system if the patient is not in the system</p>
+ 
+            <table>
+              <!-- BEGIN Error -->
+              <tr>
+                <td colspan="2">{Error}</td> 
+              </tr>
+ <!-- END Error -->
+              <tr>
+                <td>
+                  <div class="input-append offset5">
+                    <input class="search-query" type="text" placeholder="Name(s) Or Hosiptal Number" name="{s_keyword_Name}" value="{s_keyword}" maxlength="70" size="50" id="sex_occupation_patient1s_keyword">
+                    <!-- BEGIN Button Button_DoSearch --><button name="{Button_Name}" type="submit" value="Search" id="sex_occupation_patient1Button_DoSearch" class="btn">Search</button><!-- END Button Button_DoSearch -->
+                  </div>
+ </td> 
+              </tr>
+ 
+            </table>
+ 
+          </form>
+ <!-- END Record sex_occupation_patient1 --><br>
+          <!-- BEGIN Grid sex_occupation_patient -->
+          <table class="table table-striped">
+            <tr>
+              <th>Patient's ID</th>
+ 
+              <th>Surname</th>
+ 
+              <th>Other Names</th>
+ 
+              <th>Age</th>
+ 
+              <th>Hospital No.</th>
+ 
+              <th>Occupation</th>
+ 
+              <th>Sex</th>
+ 
+              <th>&nbsp;</th>
+ 
+            </tr>
+ 
+            <!-- BEGIN Row -->
+            <tr>
+              <td><a href="{patient_id_Src}" id="sex_occupation_patientpatient_id_{sex_occupation_patient:rowNumber}">{patient_id}</a>&nbsp;</td> 
+              <td>{surname}&nbsp;</td> 
+              <td>{other_names}&nbsp;</td> 
+              <td>{age}&nbsp;</td> 
+              <td>{hospital_no}&nbsp;</td> 
+              <td>{occupation}&nbsp;</td> 
+              <td>{sex}&nbsp;</td> 
+              <td><a href="{Link1_Src}" id="sex_occupation_patientLink1_{sex_occupation_patient:rowNumber}">Proceed</a></td> 
+            </tr>
+ <!-- END Row -->
+            <!-- BEGIN NoRecords -->
+            <tr>
+              <td colspan="8"><label class="label label-warning">No patient found! Try another search parameter or click 'Add New' to register this patient.</label></td> 
+            </tr>
+ <!-- END NoRecords -->
+            <tr>
+              <td colspan="8"><a href="{sex_occupation_patient_Insert_Src}" id="sex_occupation_patientsex_occupation_patient_Insert">Add New</a>&nbsp;</td> 
+            </tr>
+ 
+          </table>
+ <!-- END Grid sex_occupation_patient -->
+          <!-- BEGIN Record patient -->          
+ {Label1} {Label2} 
+          <form id="patient" method="post" action="{Action}" name="{HTMLFormName}">
+            <table class="table table-hover">
+              <!-- BEGIN Error -->
+              <tr>
+                <td colspan="4">{Error}</td> 
+              </tr>
+ <!-- END Error -->
+              <tr>
+                <th>Surname</th>
+ 
+                <td><input type="text" placeholder="Surname" name="{surname_Name}" value="{surname}" maxlength="70" size="50" id="patientsurname"></td> 
+                <th>Other Names</th>
+ 
+                <td><input type="text" placeholder="Other Name(s)" name="{other_names_Name}" value="{other_names}" maxlength="100" size="50" id="patientother_names"></td> 
+              </tr>
+ 
+              <tr>
+                <th>Sex</th>
+ 
+                <td>
+                  <select name="{sex_id_Name}" id="patientsex_id">
+                    <option value="">Select Value</option>
+ {sex_id_Options} 
+                  </select>
+ </td> 
+                <th>Occupation</th>
+ 
+                <td>
+                  <select name="{occupation_id_Name}" id="patientoccupation_id">
+                    <option value="">Select Value</option>
+ {occupation_id_Options} 
+                  </select>
+ </td> 
+              </tr>
+ 
+              <tr>
+                <th>Age</th>
+ 
+                <td><input type="text" placeholder="Age -Numbers only-" name="{age_Name}" value="{age}" maxlength="10" size="10" id="patientage"></td> 
+                <th>Hospital No.</th>
+ 
+                <td><input type="text" placeholder="Hospital Number" name="{hospital_no_Name}" value="{hospital_no}" maxlength="45" size="45" id="patienthospital_no"></td> 
+              </tr>
+ 
+              <tr>
+                <td colspan="4" style="text-align: right">
+                  <!-- BEGIN Button Button_Insert --><button name="{Button_Name}" type="submit" value="Add" id="patientButton_Insert" class="btn btn-primary">Register Patient</button><!-- END Button Button_Insert -->
+                  <!-- BEGIN Button Button_Update --><button name="{Button_Name}" type="submit" value="Submit" id="patientButton_Update" class="btn btn-primary">Update Record</button><!-- END Button Button_Update -->
+                  <!-- BEGIN Button Button1 --><button name="{Button_Name}" type="submit" value="Button1" id="patientButton1" class="btn">Cancel</button><!-- END Button Button1 --></td> 
+              </tr>
+ 
+            </table>
+ 
+          </form>
+ <!-- END Record patient --><br>
+        </div>
+ 
+      </div>
+ 
+    </div>
+ 
+    <div class="accordion-group">
+      <div class="accordion-heading">
+<a href="#collapseTwo" class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2"><strong>Check Patient Result</strong></a> 
+      </div>
+ 
+      <div id="collapseTwo" class="accordion-body collapse">
+        <div class="accordion-inner">
+          Here is for patients result... 
+        </div>
+ 
+      </div>
+ 
+    </div>   
+ 
+    <div class="accordion-group">
+      <div class="accordion-heading">
+<a href="#collapseFour" class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2"><strong>View Todays Appointments</strong></a> 
+      </div>
+ 
+      <div id="collapseFour" class="accordion-body collapse">
+        <div class="accordion-inner">
+          View Todays appointment here... 
+        </div>
+ 
+      </div>
+ 
+    </div>
+ 
+  </div>
+</div>
+{footer}
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+<script type="text/javascript">
+	$('#popover').popover();
+	$('#accordion2').collapse();
+</script>
+</body>
+</html>

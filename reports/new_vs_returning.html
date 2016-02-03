@@ -1,0 +1,52 @@
+<!-- Requires jquery, highcharts and exporting.js -->
+<!--Div that will hold the line chart-->
+<div id="mycontainer1" style="min-width: 310px; height: 400px; margin: 0 auto">
+</div>
+
+<script type="text/javascript">
+  $(function () {
+    var chart;
+    
+    $(document).ready(function () {
+    	
+    	// Build the chart
+        $('#mycontainer1').highcharts({
+            chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false
+            },
+            title: {
+                text: 'New vs Returning Patients Distribution'
+            },
+            tooltip: {
+        	    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: false
+                    },
+                    showInLegend: true
+                }
+            },
+            series: [{
+                type: 'pie',
+                name: '% share',
+                data: [
+                    ['New',   {newPatient}],                    
+                    {
+                        name: 'Returning',
+                        y: {returningPatient},
+                        sliced: true,
+                        selected: true
+                    }                    
+                ]
+            }]
+        });
+    });
+    
+});
+	</script>

@@ -1,0 +1,217 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>Doctors - iRadiology v1.0</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+<link rel="stylesheet" href="../css/bootstrap-responsive.css">
+<link rel="stylesheet" href="../css/iradiology.css">
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+<script src="../js/highcharts/highcharts.js"></script>
+<script src="../js/highcharts/modules/exporting.js"></script>
+<!-- script src="../js/highcharts/themes/dark-green.js"></script-->
+
+</head>
+<body>
+{header_doctors}
+<script type="text/javascript">
+	$('#popover').popover();
+	$('#accordion2').collapse();
+</script>
+<div class="navbar">
+  <div class="navbar-inner">
+    <ul class="nav">
+      <li><a>&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+ 
+      <li><a><strong>&nbsp;&nbsp;&nbsp;Designation: </strong>{Label1}</a></li>
+ 
+      <li><a>&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+ 
+      <li><a>&nbsp;&nbsp;</a></li>
+ 
+      <li><a><strong>Department: </strong>{Label3}</a></li>      
+ 
+      <li><a>&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+ 
+      <li><a>&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+ 
+      <li class="dropdown"><a class="dropdown-toggle" id="dropdown2" data-toggle="dropdown">&nbsp;&nbsp;<span class="icon-user"></span> {Label2}<b class="caret"></b></a> 
+      <ul class="dropdown-menu" role="menu" aria-labelledby="dropdown2">
+        <li role="presentation"><a href="../login/change_pwd.php" role="menuitem" tabindex="-1">Change Password</a></li>
+ 
+      </ul>
+ </li>
+ 
+    </ul>
+ 
+  </div>
+</div>
+<div style="margin-left:5px; margin-right:5px">
+  <h2>How may I be of help today?</h2>
+ 
+  <hr>
+  <div class="accordion" id="accordion2">
+    <div class="accordion-group">
+      <div class="accordion-heading">
+<a href="#collapseOne" class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2">My Appointments</a> 
+      </div>
+ 
+      <div id="collapseOne" class="accordion-body collapse">
+        <div class="accordion-inner">
+          <legend>My Patients Today</legend>
+ 
+          <!-- BEGIN Grid status_result_occupation -->
+          <table class="table table-striped">
+            <tr>
+              <td colspan="8">Total Appointments:&nbsp;{status_result_occupation_TotalRecords}</td> 
+            </tr>
+ 
+            <tr>
+              <th>
+              <!-- BEGIN Sorter Sorter_status --><span class="Sorter"><a href="{Sort_URL}" id="status_result_occupationSorter_status">Status</a> 
+              <!-- BEGIN Asc_On --><img src="../Styles/None/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Desc_On --><img src="../Styles/None/Images/Desc.gif"><!-- END Desc_On --></span><!-- END Sorter Sorter_status --></th>
+ 
+              <th>
+              <!-- BEGIN Sorter Sorter_appointment_time --><span class="Sorter"><a href="{Sort_URL}" id="status_result_occupationSorter_appointment_time">Appointment Time</a> 
+              <!-- BEGIN Asc_On --><img src="../Styles/None/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Desc_On --><img src="../Styles/None/Images/Desc.gif"><!-- END Desc_On --></span><!-- END Sorter Sorter_appointment_time --></th>
+ 
+              <th>
+              <!-- BEGIN Sorter Sorter_surname --><span class="Sorter"><a href="{Sort_URL}" id="status_result_occupationSorter_surname">Surname</a> 
+              <!-- BEGIN Asc_On --><img src="../Styles/None/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Desc_On --><img src="../Styles/None/Images/Desc.gif"><!-- END Desc_On --></span><!-- END Sorter Sorter_surname --></th>
+ 
+              <th>
+              <!-- BEGIN Sorter Sorter_other_names --><span class="Sorter"><a href="{Sort_URL}" id="status_result_occupationSorter_other_names">Other Names</a> 
+              <!-- BEGIN Asc_On --><img src="../Styles/None/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Desc_On --><img src="../Styles/None/Images/Desc.gif"><!-- END Desc_On --></span><!-- END Sorter Sorter_other_names --></th>
+ 
+              <th>
+              <!-- BEGIN Sorter Sorter_age --><span class="Sorter"><a href="{Sort_URL}" id="status_result_occupationSorter_age">Age</a> 
+              <!-- BEGIN Asc_On --><img src="../Styles/None/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Desc_On --><img src="../Styles/None/Images/Desc.gif"><!-- END Desc_On --></span><!-- END Sorter Sorter_age --></th>
+ 
+              <th>
+              <!-- BEGIN Sorter Sorter_sex --><span class="Sorter"><a href="{Sort_URL}" id="status_result_occupationSorter_sex">Sex</a> 
+              <!-- BEGIN Asc_On --><img src="../Styles/None/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Desc_On --><img src="../Styles/None/Images/Desc.gif"><!-- END Desc_On --></span><!-- END Sorter Sorter_sex --></th>
+ 
+              <th>
+              <!-- BEGIN Sorter Sorter_occupation --><span class="Sorter"><a href="{Sort_URL}" id="status_result_occupationSorter_occupation">Occupation</a> 
+              <!-- BEGIN Asc_On --><img src="../Styles/None/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Desc_On --><img src="../Styles/None/Images/Desc.gif"><!-- END Desc_On --></span><!-- END Sorter Sorter_occupation --></th>
+ 
+              <th>&nbsp; </th>
+ 
+            </tr>
+ 
+            <!-- BEGIN Row -->
+            <tr>
+              <td><label class="label label-warning">{status}</label>&nbsp;</td> 
+              <td>{appointment_time}&nbsp;</td> 
+              <td><a href="{surname_Src}" data-toggle="modal" data-target="#myModal" role="button" id="status_result_occupationsurname_{status_result_occupation:rowNumber}" class="btn btn-link">{surname}</a>&nbsp;</td> 
+              <td>{other_names}&nbsp;</td> 
+              <td>{age}&nbsp;</td> 
+              <td>{sex}&nbsp;</td> 
+              <td>{occupation}&nbsp;</td> 
+              <td><a href="{patient_id_Src}" id="status_result_occupationpatient_id_{status_result_occupation:rowNumber}">Write Report</a>&nbsp;</td> 
+            </tr>
+ <!-- END Row -->
+            <!-- BEGIN NoRecords -->
+            <tr>
+              <td colspan="8"><label class="label label-warning">No Appointments Today for Me!</label></td> 
+            </tr>
+ <!-- END NoRecords -->
+          </table>
+ 
+          <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button> 
+              <h3 id="myModalLabel">Complete Patient Card Information</h3>
+ 
+            </div>
+ 
+            <div class="modal-body">
+            </div>
+ 
+            <div class="modal-footer">
+              <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button> 
+            </div>
+ 
+          </div>
+ <!-- END Grid status_result_occupation -->
+        </div>
+ 
+      </div>
+ 
+    </div>
+ 
+    <div class="accordion-group">
+      <div class="accordion-heading">
+<a href="#collapseTwo" class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2">My Stats...</a> 
+      </div>
+ 
+      <div id="collapseTwo" class="accordion-body collapse">
+        <div class="accordion-inner">
+          <legend>Statical Representation of My Patients Information</legend>
+ 
+          <p>To Do...</p>
+ 
+        </div>
+ 
+      </div>
+ 
+    </div>
+ 
+  </div>
+ 
+  <div id="mycontainer" style="min-width: 310px; height: 400px; margin: 0 auto">
+  </div>
+</div>
+{footer}
+<script type="text/javascript">
+  $(function () {
+        $('#mycontainer').highcharts({
+            title: {
+                text: 'My Weekly Patients Appointments',
+                x: -20 //center
+            },
+            subtitle: {
+                text: 'iRadiology v1.0',
+                x: -20
+            },
+            xAxis: {
+                categories: ['Mon', 'Tue', 'Wed', 'Thur', 'Fri']
+            },
+            yAxis: {
+                title: {
+                    text: 'Number of Patients'
+                },
+                plotLines: [{
+                    value: 0,
+                    width: 1,
+                    color: '#808080'
+                }]
+            },
+            tooltip: {
+                valueSuffix: 'patients'
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'middle',
+                borderWidth: 0
+            },
+            series: [{
+                name: 'Patients',
+                data: [25, 32, 22, 39, 19 ]
+            }]
+        });
+    });
+    
+	</script>
+</body>
+</html>

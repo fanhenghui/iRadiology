@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>Template</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/bootstrap-responsive.css">
+<link rel="stylesheet" href="css/iradiology.css">
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script src="js/highcharts/highcharts.js"></script>
+<script src="js/highcharts/modules/exporting.js"></script>
+</head>
+<body>
+{header}
+<!--Div that will hold the line chart-->
+<div id="mycontainer3" style="min-width: 310px; height: 400px; margin: 0 auto">
+</div>
+{footer}
+<script type="text/javascript">
+  $(function () {
+        $('#mycontainer3').highcharts({
+            chart: {
+            },
+            title: {
+                text: 'Patient Distribution based on Statistical Conclusion'
+            },
+            xAxis: {
+                categories: ['Breast Cancer', 'Normal Study', 'Orthopedic', 'Gastrointestinal Investigations', 'Cardivoascular']
+            },
+            yAxis: {
+                title: {
+                    text: 'No. of Patients'
+                }
+            },
+            tooltip: {
+                formatter: function() {
+                    var s;
+                    if (this.point.name) { // the pie chart
+                        s = ''+
+                            this.point.name +': '+ this.y +' patients';
+                    } else {
+                        s = ''+
+                            this.x  +': '+ this.y;
+                    }
+                    return s;
+                }
+            },
+            labels: {
+                items: [{
+                    html: 'Total Genger Distribution',
+                    style: {
+                        left: '40px',
+                        top: '8px',
+                        color: 'black'
+                    }
+                }]
+            },
+            series: [{
+                type: 'column',
+                name: 'Male',
+                data: [{m1}, {m2}, {m3}, {m4}, {m5},]
+            }, {
+                type: 'column',
+                name: 'Total(M+F)',
+                data: [2, 3, 5, 7, 6,8]
+            }, {
+                type: 'column',
+                name: 'Female',
+                data: [{f1}, {f2}, {f3}, {f4}, {f5}]
+            }, {
+                type: 'spline',
+                name: 'Gender Average',
+                data: [{av1}, {av2}, {av3}, {av4}, {av5}],
+                marker: {
+                	lineWidth: 2,
+                	lineColor: Highcharts.getOptions().colors[3],
+                	fillColor: 'white'
+                }
+            }, {
+                type: 'pie',
+                name: 'Total consumption',
+                data: [{
+                    name: 'Male',
+                    y: 3,
+                    color: Highcharts.getOptions().colors[0] // Male's color
+                }, {
+                    name: 'Female',
+                    y: 15,
+                    color: Highcharts.getOptions().colors[2] // Female's color
+                }],
+                center: [100, 80],
+                size: 100,
+                showInLegend: false,
+                dataLabels: {
+                    enabled: false
+                }
+            }]
+        });
+    });    
+
+	</script>
+<script type="text/javascript">
+		$('#popover').popover();
+	</script>
+</body>
+</html>

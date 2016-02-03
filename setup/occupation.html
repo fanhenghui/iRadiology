@@ -1,0 +1,96 @@
+<script language="JavaScript" type="text/javascript">
+//Begin CCS script
+//Include Common JSFunctions @1-A2F3288E
+</script>
+<script language="JavaScript" src="{page:pathToRoot}ClientI18N.php?file=Functions.js&amp;locale={res:CCS_LocaleID}" type="text/javascript" charset="utf-8"></script>
+<script language="JavaScript" type="text/javascript">
+//End Include Common JSFunctions
+
+//occupationoccupationButton_Submit_OnClick @8-234AA001
+function occupationoccupationButton_Submit_OnClick()
+{
+    var result = true;
+//End occupationoccupationButton_Submit_OnClick
+
+//Confirmation Message @9-257FDD03
+    return confirm('Submit records?');
+//End Confirmation Message
+
+//Close occupationoccupationButton_Submit_OnClick @8-BC33A33A
+    return result;
+}
+//End Close occupationoccupationButton_Submit_OnClick
+
+//occupationoccupationCancel_OnClick @10-6B09BC42
+function occupationoccupationCancel_OnClick()
+{
+    disableValidation = true;
+    return true;
+}
+//End occupationoccupationCancel_OnClick
+
+//bind_events @1-13C70C5D
+function occupation_bind_events() {
+    addEventHandler("occupationoccupationButton_Submit", "click", occupationoccupationButton_Submit_OnClick);
+    addEventHandler("occupationoccupationCancel", "click", occupationoccupationCancel_OnClick);
+}
+//End bind_events
+
+//End CCS script
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="{page:pathToRoot}css/bootstrap.css">
+<link rel="stylesheet" href="{page:pathToRoot}css/bootstrap-responsive.css">
+<!-- link rel="stylesheet" href="../css/iradiology.css"-->
+<!-- BEGIN EditableGrid occupation -->
+<form id="indexoccupation" name="{HTMLFormName}" action="{Action}" method="post">
+  <input type="hidden" name="FormState" value="{FormState}">{FormScript} 
+  <legend>Add/Edit Patients Occupations</legend>
+ 
+  <table class="table table-striped table-condensed">
+    <!-- BEGIN Error -->
+    <tr>
+      <td colspan="3">{Error}</td> 
+    </tr>
+ <!-- END Error -->
+    <tr>
+      <th>S/No.</th>
+ 
+      <th>Occupation</th>
+ 
+      <th>Delete?</th>
+ 
+    </tr>
+ 
+    <!-- BEGIN Row -->
+    <!-- BEGIN RowError -->
+    <tr>
+      <td colspan="3">{Error}</td> 
+    </tr>
+ <!-- END RowError -->
+    <tr>
+      <td>{occupation_id}&nbsp;</td> 
+      <td><input type="text" name="{occupation1_Name}" value="{occupation1}" maxlength="45" size="45" id="indexoccupationoccupation1_{indexoccupation:rowNumber}">&nbsp;</td> 
+      <td>
+        <!-- BEGIN CheckBox CheckBox_Delete --><input type="checkbox" name="{CheckBox_Delete_Name}" value="1" {CheckBox_Delete} id="indexoccupationCheckBox_Delete_{indexoccupation:rowNumber}"><!-- END CheckBox CheckBox_Delete -->&nbsp;</td> 
+    </tr>
+ <!-- END Row -->
+    <!-- BEGIN NoRecords -->
+    <tr>
+      <td colspan="3">No Occupations specified in the system</td> 
+    </tr>
+ <!-- END NoRecords -->
+    <tr>
+      <td style="text-align:right;" colspan="3">
+        <!-- BEGIN Button Button_Submit --><button name="{Button_Name}" type="submit" value="Submit" id="indexoccupationButton_Submit" class="btn btn-primary">Submit</button><!-- END Button Button_Submit -->
+        <!-- BEGIN Button Cancel --><button name="{Button_Name}" type="submit" value="Cancel" id="indexoccupationCancel" class="btn">Cancel</button><!-- END Button Cancel --></td> 
+    </tr>
+ 
+  </table>
+</form>
+<!-- END EditableGrid occupation --><br>
+<script type="text/javascript" src="{page:pathToRoot}js/jquery.js"></script>
+<script type="text/javascript" src="{page:pathToRoot}js/bootstrap.min.js"></script>
+<script type="text/javascript">
+	$('#popover').popover();
+</script>

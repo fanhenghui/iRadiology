@@ -1,0 +1,96 @@
+<script language="JavaScript" type="text/javascript">
+//Begin CCS script
+//Include Common JSFunctions @1-A2F3288E
+</script>
+<script language="JavaScript" src="{page:pathToRoot}ClientI18N.php?file=Functions.js&amp;locale={res:CCS_LocaleID}" type="text/javascript" charset="utf-8"></script>
+<script language="JavaScript" type="text/javascript">
+//End Include Common JSFunctions
+
+//departmentdepartment1Button_Submit_OnClick @9-C12B5A7F
+function departmentdepartment1Button_Submit_OnClick()
+{
+    var result = true;
+//End departmentdepartment1Button_Submit_OnClick
+
+//Confirmation Message @10-257FDD03
+    return confirm('Submit records?');
+//End Confirmation Message
+
+//Close departmentdepartment1Button_Submit_OnClick @9-BC33A33A
+    return result;
+}
+//End Close departmentdepartment1Button_Submit_OnClick
+
+//departmentdepartment1Cancel_OnClick @11-27EC5EB7
+function departmentdepartment1Cancel_OnClick()
+{
+    disableValidation = true;
+    return true;
+}
+//End departmentdepartment1Cancel_OnClick
+
+//bind_events @1-83FA5F9D
+function department_bind_events() {
+    addEventHandler("departmentdepartment1Button_Submit", "click", departmentdepartment1Button_Submit_OnClick);
+    addEventHandler("departmentdepartment1Cancel", "click", departmentdepartment1Cancel_OnClick);
+}
+//End bind_events
+
+//End CCS script
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="{page:pathToRoot}css/bootstrap.css">
+<link rel="stylesheet" href="{page:pathToRoot}css/bootstrap-responsive.css">
+<link rel="stylesheet" href="{page:pathToRoot}css/iradiology.css">
+<!-- BEGIN EditableGrid department1 -->
+<form id="departmentdepartment1" name="{HTMLFormName}" action="{Action}" method="post">
+  <input type="hidden" name="FormState" value="{FormState}">{FormScript} 
+  <legend>Add/Edit Department </legend>
+ 
+  <table class="table table-striped table-condensed">
+    <!-- BEGIN Error -->
+    <tr>
+      <td colspan="3">{Error}</td> 
+    </tr>
+ <!-- END Error -->
+    <tr>
+      <th>Department ID</th>
+ 
+      <th>Department</th>
+ 
+      <th>Delete?</th>
+ 
+    </tr>
+ 
+    <!-- BEGIN Row -->
+    <!-- BEGIN RowError -->
+    <tr>
+      <td colspan="3">{Error}</td> 
+    </tr>
+ <!-- END RowError -->
+    <tr>
+      <td>{department_id}</td> 
+      <td><input type="text" name="{department_Name}" value="{department}" maxlength="45" size="45" id="departmentdepartment1department_{departmentdepartment1:rowNumber}"></td> 
+      <td>
+        <!-- BEGIN CheckBox CheckBox_Delete --><input type="checkbox" name="{CheckBox_Delete_Name}" value="1" {CheckBox_Delete} id="departmentdepartment1CheckBox_Delete_{departmentdepartment1:rowNumber}"><!-- END CheckBox CheckBox_Delete -->&nbsp;</td> 
+    </tr>
+ <!-- END Row -->
+    <!-- BEGIN NoRecords -->
+    <tr>
+      <td colspan="3">No records of departments</td> 
+    </tr>
+ <!-- END NoRecords -->
+    <tr>
+      <td style="text-align:right;" colspan="3">
+        <!-- BEGIN Button Button_Submit --><button name="{Button_Name}" type="submit" value="Submit" id="departmentdepartment1Button_Submit" class="btn-primary btn">Submit</button><!-- END Button Button_Submit -->
+        <!-- BEGIN Button Cancel --><button name="{Button_Name}" type="submit" value="Cancel" id="departmentdepartment1Cancel" class="btn">Cancel</button><!-- END Button Cancel --></td> 
+    </tr>
+ 
+  </table>
+</form>
+<!-- END EditableGrid department1 --><br>
+<script type="text/javascript" src="{page:pathToRoot}js/jquery.js"></script>
+<script type="text/javascript" src="{page:pathToRoot}js/bootstrap.min.js"></script>
+<script type="text/javascript">
+	$('#popover').popover();
+</script>

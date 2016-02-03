@@ -1,0 +1,46 @@
+<table cellspacing="0" cellpadding="0" border="0" class="MainTable">
+  <tr>
+    <td valign="top">
+      <table cellspacing="0" cellpadding="0" border="0" class="Header">
+        <tr>
+          <td class="HeaderLeft">&nbsp;</td> 
+          <td class="th"><strong>{Title}</strong></td> 
+          <td class="HeaderRight">&nbsp;</td> 
+        </tr> 
+      </table>
+ 
+      <table cellspacing="0" cellpadding="0" class="Grid">
+        <tr class="Row">
+          <td colspan="2">{TotalRecords}</td> 
+        </tr>
+ 
+        <!-- BEGIN Row -->
+        <tr class="Row">
+          <!-- BEGIN ControlTitle -->
+           <th scope="row">{ControlTitle}</th>
+		  <!-- END ControlTitle -->
+          <!-- BEGIN ControlContent -->
+           <td>{ControlTemplate}&nbsp;</td>
+		  <!-- END ControlContent -->
+        </tr>
+		<!-- END Row -->
+        <!-- BEGIN Separator -->
+        <tr class="Separator">
+          <td colspan="2">&nbsp;</td> 
+        </tr>
+		<!-- END Separator -->
+        <!-- BEGIN NoRecords -->
+        <tr class="NoRecords">
+          <td colspan="2">{NoRecords}</td> 
+        </tr>
+ <!-- END NoRecords -->
+        <!-- BEGIN Footer -->
+        <tr class="Footer">
+          <td colspan="2">{Navigator} &nbsp;</td> 
+        </tr>
+ <!-- END Footer -->
+      </table>
+	</td> 
+  </tr>
+</table>
+

@@ -1,0 +1,192 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>Schedule Appointment - iRadiology v1.0</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+<link rel="stylesheet" href="../css/bootstrap-responsive.css">
+<link rel="stylesheet" href="../css/iradiology.css">
+<script language="JavaScript" type="text/javascript">
+//Begin CCS script
+//Include Common JSFunctions @1-86BEACD2
+</script>
+<script language="JavaScript" src="../ClientI18N.php?file=Functions.js&amp;locale={res:CCS_LocaleID}" type="text/javascript" charset="utf-8"></script>
+<script language="JavaScript" src="../ClientI18N.php?file=DatePicker.js&amp;locale={res:CCS_LocaleID}" type="text/javascript" charset="utf-8"></script>
+<script language="JavaScript" type="text/javascript">
+//End Include Common JSFunctions
+
+//Include User Scripts @1-A8EC71EA
+</script>
+<script language="JavaScript" src="../js/yui/build/yahoo-dom-event/yahoo-dom-event.js" type="text/javascript"></script>
+<script language="JavaScript" src="../js/yui/build/calendar/calendar-min.js" type="text/javascript"></script>
+<script language="JavaScript" src="../js/yui/datepicker-commons.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="../Styles/None/ccs-yui-calendar.css">
+<script language="JavaScript" type="text/javascript">
+//End Include User Scripts
+
+//Handle resultappointment_dateInlineDatePicker1 @17-F9F098F0
+function resultappointment_dateInlineDatePicker1_start(sender) {
+    if (!sender || sender === window) return;
+    generateDatePicker(sender.id, "LongDate","None");
+}
+//End Handle resultappointment_dateInlineDatePicker1
+
+//bind_events @1-C3A8DCD2
+function bind_events() {
+    try { footer_bind_events(); } catch(e) {}
+    try { header_receptionist_sa_bind_events(); } catch(e) {}
+    addEventHandler("resultappointment_date", "load", resultappointment_dateInlineDatePicker1_start);
+}
+//End bind_events
+
+window.onload = bind_events; //Assign bind_events @1-19F7B649
+
+//End CCS script
+</script>
+</head>
+<body>
+{header_receptionist_sa}
+<div class="navbar">
+  <div class="navbar-inner">
+    <ul class="nav">
+      <li><a>&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+ 
+      <li><a><strong>&nbsp;&nbsp;&nbsp;Designation: </strong>{Label1}</a></li>
+ 
+      <li><a>&nbsp;</a></li>
+ 
+      <li><a><strong>Today's Date: </strong>{Label4}</a></li>
+ 
+      <li class="dropdown"><a class="dropdown-toggle" id="dropdown2" data-toggle="dropdown">&nbsp;&nbsp;<span class="icon-user"></span>  {Label2}<b class="caret"></b></a>
+ 		<ul class="dropdown-menu" role="menu" aria-labelledby="dropdown2">
+ 			<li role="presentation"><a href="../login/change_password.php" role="menuitem" tabindex="-1">Change Password</a></li>
+ 		</ul>
+ 	  </li>
+ 
+    </ul>
+ 
+  </div>
+</div>
+<div style="margin-left:5px; margin-right:5px">
+  <h2>Schedule Appointment for {Label3} <span class="label-important">ID: {Label5}</span></h2>
+ 
+  <hr>
+  <!-- BEGIN Record result -->
+  <form id="result" method="post" action="{Action}" name="{HTMLFormName}">
+    <!-- BEGIN Error -->
+    <div class="f-row">
+      <label class="label label-warning">{Error}</label> 
+    </div>
+ <!-- END Error -->
+    <div class="row-fluid">
+      <div class="f-row control-group">
+        <div class="span4">
+          <label class="control-label" for="resultappointment_date">Date</label> 
+          <div class="f-inputs controls">
+            <input type="text" name="{appointment_date_Name}" placeholder="use drop-down date picker" value="{appointment_date}" maxlength="100" size="21" id="resultappointment_date">
+          </div>
+ 
+        </div>
+ 
+        <div class="span2">
+          <label class="control-label" for="resultappointment_time">Time</label> 
+          <div class="f-inputs controls">
+            <!-- BEGIN TextBox appointment_time --><input type="text" placeholder="e.g: 2:30 PM" class="input-small" name="{appointment_time_Name}" value="{appointment_time}" maxlength="100" size="21" id="resultappointment_time"><!-- END TextBox appointment_time -->
+          </div>
+ 
+        </div>
+ 
+        <div class="span4">
+          <label class="control-label" for="resultdoctor_name">Doctor</label> 
+          <div class="f-inputs controls">
+            <select name="{doctor_name_Name}" id="resultdoctor_name">
+              <option value="">Select Value</option>
+ {doctor_name_Options} 
+            </select>
+ 
+          </div>
+ 
+        </div>
+ 
+        <div class="f-actions ">
+          <label class="control-label" for="resultButton_Update">&nbsp;</label> 
+          <div class="f-inputs controls">
+            <!-- BEGIN Button Button_Update --><button name="{Button_Name}" type="submit" value="Submit" id="resultButton_Update" class="btn btn-success">Book Appointment</button><!-- END Button Button_Update -->
+          </div>
+ 
+        </div>
+ 
+      </div>
+ 
+    </div>
+ 
+  </form>
+ <!-- END Record result -->
+  <!-- BEGIN Calendar result_users -->
+  <h4>Calendar Help</h4>
+ 
+  <table class="table">
+    <tr>
+      <td>
+        <!-- BEGIN CalendarNavigator Navigator -->
+        <table style="display: inline;">
+          <tr>
+            <!-- BEGIN Prev_Year -->
+            <td><a href="{URL}" title="Prev Year">&lt;&lt;</a></td><!-- END Prev_Year -->
+            <!-- BEGIN Prev -->
+            <td><a href="{URL}" title="Prev Month">&lt;</a></td><!-- END Prev -->
+            <td>{MonthFullName}</td> 
+            <td>{Year}</td> 
+            <!-- BEGIN Next -->
+            <td><a href="{URL}" title="Next Month">&gt;</a></td><!-- END Next -->
+            <!-- BEGIN Next_Year -->
+            <td><a href="{URL}" title="Next Year">&gt;&gt;</a></td><!-- END Next_Year -->
+          </tr>
+ 
+        </table>
+ <!-- END CalendarNavigator Navigator --></td> 
+      <tr>
+        <tr valign="top">
+          <!-- BEGIN Month -->
+          <td colspan="{MonthsInRow}">
+            <table class="table">
+              <tr>
+                <!-- BEGIN WeekDays -->
+                <td width="14.29%" {Style}>{DayOfWeek}</td><!-- END WeekDays -->
+              </tr>
+ 
+              <!-- BEGIN Week -->
+              <tr>
+                <!-- BEGIN Day -->
+                <td {Style}>{DayNumber} 
+                  <!-- BEGIN EventRow -->
+                  <div>
+                    {EventTime} - {EventDescription} 
+                  </div>
+ <!-- END EventRow --></td><!-- END Day -->
+                <!-- BEGIN EmptyDay -->
+                <td {Style}>&nbsp;</td><!-- END EmptyDay -->
+              </tr>
+ <!-- END Week -->
+            </table>
+ </td><!-- END Month -->
+          <!-- BEGIN MonthsRowSeparator -->
+        </tr>
+ 
+        <tr valign="top">
+          <!-- END MonthsRowSeparator -->
+        </tr>
+ 
+      </table>
+ <!-- END Calendar result_users --><br>
+    </div>
+ {footer} 
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+	$('#popover').popover();
+</script>
+    </body>
+ 
+    </html>
